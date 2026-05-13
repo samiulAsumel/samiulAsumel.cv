@@ -1,416 +1,512 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MD. Samiul Alam Sumel — IT Operations Specialist</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page">
-      <!-- HEADER -->
-      <header>
-        <h1>MD. Samiul Alam Sumel</h1>
-        <p class="title">
-          IT Operations Specialist | Port &amp; Logistics Systems
-        </p>
-        <p class="subtitle">
-          Linux Administrator (RHCSA Trained) &nbsp;·&nbsp; Cloud &amp; DevOps
-          Engineer &nbsp;·&nbsp; 12+ Years Port Operations Experience
-        </p>
-        <div class="contacts">
-          <p>
-            Email: sa.sumel91@gmail.com &nbsp;|&nbsp; Phone: +880-1312-312512
-            &nbsp;|&nbsp; Location: Mongla, Bagerhat, Bangladesh
-          </p>
-          <p>
-            GitHub: github.com/samiulAsumel &nbsp;|&nbsp; LinkedIn:
-            linkedin.com/in/samiul-a-sumel
-          </p>
-          <p>
-            Portfolio: portbill.vercel.app &nbsp;·&nbsp;
-            pulse-guard-one.vercel.app &nbsp;·&nbsp;
-            devops-command-summary.vercel.app &nbsp;·&nbsp;
-            monthly-car-balance.vercel.app
-          </p>
-        </div>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Port Digital Operations Specialist — 12+ years Mongla Port Authority. Wharfrent billing, cargo operations, process digitization. Targeting Saudi Arabia 2027.">
+  <title>MD Samiul Alam Sumel — Port Digital Operations Specialist</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-      <!-- SUMMARY -->
-      <section>
-        <h2>Professional Summary</h2>
-        <p class="summary">
-          IT Operations Specialist with 12+ years of hands-on experience at
-          Mongla Port Authority combined with comprehensive Linux administration
-          training (RHCSA EX200 — 220-day mastery, 60-day exam coaching, 20
-          enterprise lab projects) and production-grade DevOps skills covering
-          Docker, Ansible, Kubernetes, AWS, and CI/CD automation. Uniquely
-          positioned at the intersection of deep maritime port domain expertise
-          and modern IT infrastructure — built and deployed 4 live production
-          systems for real port operations. Seeking an IT Operations or Systems
-          Administration role at a Saudi port, logistics, or maritime
-          organization where port domain knowledge and certified Linux skills
-          deliver immediate operational value.
-        </p>
-      </section>
+  <!-- Scroll progress bar -->
+  <div id="pgbar"></div>
 
-      <!-- SKILLS -->
-      <section>
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-          <div class="sk">
-            <b>Linux Administration:</b> RHEL 9, RHCSA (EX200 trained), systemd,
-            SELinux, LVM, firewalld, GRUB, Podman, performance tuning
-          </div>
-          <div class="sk">
-            <b>Cloud Platforms:</b> AWS (EC2, S3, IAM, VPC, RDS, CloudWatch),
-            Azure (VM, blob storage, DevOps basics)
-          </div>
-          <div class="sk">
-            <b>Containerization:</b> Docker, Docker Compose, Podman, container
-            networking, volumes, multi-stage builds, registry
-          </div>
-          <div class="sk">
-            <b>Orchestration:</b> Kubernetes (pods, deployments, services,
-            ingress, configmaps, secrets, Helm, kubectl)
-          </div>
-          <div class="sk">
-            <b>Automation:</b> Ansible (playbooks, roles, variables, handlers,
-            Jinja2 templates, ad-hoc commands)
-          </div>
-          <div class="sk">
-            <b>CI/CD Pipelines:</b> GitHub Actions (build, test, deploy
-            workflows), Jenkins basics, GitOps concepts
-          </div>
-          <div class="sk">
-            <b>Scripting:</b> Bash (advanced — automation scripts, cron, system
-            provisioning), Python (intermediate)
-          </div>
-          <div class="sk">
-            <b>Web &amp; Networking:</b> Nginx (reverse proxy, SSL/TLS, server
-            blocks), TCP/IP, DNS, SSH hardening, firewalld
-          </div>
-          <div class="sk">
-            <b>Monitoring &amp; Observability:</b> Prometheus, Grafana
-            dashboards, CloudWatch alerts, journald, ELK basics
-          </div>
-          <div class="sk">
-            <b>Storage:</b> LVM (PV/VG/LV, extend, resize), XFS/ext4/swap, NFS
-            server/client, autofs, /etc/fstab
-          </div>
-          <div class="sk">
-            <b>Security:</b> SELinux (contexts, booleans, port labeling,
-            restorecon), SSH hardening, IAM least privilege
-          </div>
-          <div class="sk">
-            <b>Database &amp; Tools:</b> SQL (SELECT, JOIN, schema reading),
-            Firebase real-time sync, Git/GitHub, RDS, S3
-          </div>
-        </div>
-      </section>
+  <!-- Full-page particle canvas -->
+  <canvas id="bg" aria-hidden="true"></canvas>
 
-      <!-- EXPERIENCE -->
-      <section>
-        <h2>Professional Experience</h2>
-
-        <div class="job">
-          <div class="jhead">
-            <div class="jleft">
-              <div class="role">Senior Outdoor Assistant</div>
-              <div class="org">
-                Mongla Port Authority — Mongla, Bagerhat, Bangladesh
-              </div>
-            </div>
-            <div class="jdate">January 2013 – Present<br />(12+ Years)</div>
-          </div>
-          <ul class="jlist">
-            <li>
-              Managed complete car wharfrent billing cycle — calculated
-              slab-wise charges for vehicle imports applying port rate rules,
-              VAT, and levy for Clearing &amp; Forwarding (CF) agents; provided
-              advance billing estimates reducing vehicle dwell time
-            </li>
-            <li>
-              Prepared and maintained daily overtime reports, monthly revenue
-              reports, monthly cumulative income statements, car purpose income
-              reports, and daily car balance records tracking vehicle positions
-              across multiple port locations
-            </li>
-            <li>
-              Generated car import/delivery reports and port jetty statistics
-              reports used by multiple departments and port authority management
-            </li>
-            <li>
-              Coordinated with CF agents on billing queries, documentation
-              requirements, and advance payment planning for imported vehicles
-            </li>
-            <li>
-              Identified inefficiencies in manual paper-based billing and
-              tracking workflows — independently initiated and built automated
-              IT systems to replace these processes, now used by port
-              stakeholders
-            </li>
-            <li>
-              Developed deep expertise in Bangladesh port billing regulations,
-              wharfrent calculation methodology, maritime logistics, and Customs
-              clearance workflows — directly transferable to Saudi port
-              environments
-            </li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="jhead">
-            <div class="jleft">
-              <div class="role">
-                Linux &amp; DevOps Engineer — Certification Training Program
-              </div>
-              <div class="org">
-                RHCSA 220-Day Mastery + 60-Day Exam Coaching + 10-Month DevOps
-                Roadmap
-              </div>
-            </div>
-            <div class="jdate">2025 – 2026</div>
-          </div>
-          <ul class="jlist">
-            <li>
-              Completed RHCSA EX200 (RHEL 9) — 220-day mastery program + 60-day
-              structured exam coaching covering all official Red Hat exam
-              objectives across 20 enterprise hands-on lab projects
-            </li>
-            <li>
-              Mastered Linux administration: user/group management with sudo,
-              file permissions and ACLs, process control, systemd, SSH
-              hardening, SELinux (contexts/booleans/port labeling), firewalld,
-              LVM storage, NFS/autofs, GRUB recovery, cron scheduling, Bash
-              scripting, and Podman containers
-            </li>
-            <li>
-              Completed Docker containerization and Docker Compose orchestration
-              — deployed multi-container applications with Nginx reverse proxy
-              and SSL in production
-            </li>
-            <li>
-              Implemented Ansible automation: wrote production-grade playbooks,
-              roles, Jinja2 templates, and handlers for server provisioning,
-              application deployment, and security hardening
-            </li>
-            <li>
-              Built GitHub Actions CI/CD pipelines for automated testing, Docker
-              image builds, and deployment workflows triggered on git push
-            </li>
-            <li>
-              Deployed complete AWS cloud infrastructure: VPC networking, EC2
-              instances with IAM least-privilege roles, S3 static hosting, RDS
-              database, and CloudWatch monitoring with automated downtime alerts
-            </li>
-            <li>
-              Operated Kubernetes clusters: managed pods, deployments, services,
-              ingress controllers, Helm charts — integrated Prometheus and
-              Grafana for production observability and alerting
-            </li>
-            <li>
-              Developed AI-assisted DevOps workflows: generated and validated
-              Ansible playbooks, Kubernetes manifests, and incident response
-              runbooks using AI tooling integrated into operational processes
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section>
-        <h2>IT Projects &amp; Portfolio</h2>
-
-        <div class="proj">
-          <div class="phead">
-            <span class="ptitle">Port Billing SaaS — portbill.vercel.app</span>
-            <span class="plink">Live Production System</span>
-          </div>
-          <div class="ptech">
-            Stack: HTML, CSS, JavaScript, Firebase Auth, Admin RBAC | Domain:
-            Port Wharfrent Billing
-          </div>
-          <ul class="plist">
-            <li>
-              Built and deployed live billing system used by Clearing &amp;
-              Forwarding agents at Mongla Port — calculates wharfrent charges in
-              advance, eliminating manual counter dependency
-            </li>
-            <li>
-              Implements slab-wise wharfrent calculation (1st 7 days / 8th–14th
-              / 15th+ day), old/new rate support (pre/post July 2024), VAT, levy
-              charges, inside/outside positioning logic, and PDF bill export
-            </li>
-            <li>
-              Admin/User RBAC — admins control rate configurations, users
-              calculate and generate bills; login-protected with Firebase Auth
-            </li>
-          </ul>
-        </div>
-
-        <div class="proj">
-          <div class="phead">
-            <span class="ptitle"
-              >Daily Vehicle Balance Tracking System —
-              monthly-car-balance.vercel.app</span
-            >
-            <span class="plink">Live Production System</span>
-          </div>
-          <div class="ptech">
-            Stack: HTML, CSS, JavaScript, Firebase real-time sync, Analytics
-            Engine | Domain: Port Vehicle Operations
-          </div>
-          <ul class="plist">
-            <li>
-              Replaced manual Excel-based daily car balance records with a
-              cloud-synced live dashboard — all stakeholders view real-time
-              vehicle position data simultaneously from any device
-            </li>
-            <li>
-              Advanced analytics: 92% efficiency scoring, KPI metrics, monthly
-              trend analysis, location performance matrix, Excel export,
-              multi-timezone and custom Bangladesh port holiday calendar
-            </li>
-          </ul>
-        </div>
-
-        <div class="proj">
-          <div class="phead">
-            <span class="ptitle"
-              >PulseGuard — Server Monitoring SaaS —
-              pulse-guard-one.vercel.app</span
-            >
-            <span class="plink">Live Production System</span>
-          </div>
-          <div class="ptech">
-            Stack: Bash automation, Linux security auditing, Multi-distro (RHEL,
-            Ubuntu, Arch, SUSE, Alpine)
-          </div>
-          <ul class="plist">
-            <li>
-              Server monitoring and security audit SaaS — automated SSH config
-              check, firewall status, SUID file detection, failed login
-              monitoring, pending security updates — single-script deployment
-              across all major Linux distributions
-            </li>
-            <li>
-              Auto-remediation engine: detected security issues resolved
-              automatically including package repair, security hardening, and
-              system optimization without manual intervention
-            </li>
-          </ul>
-        </div>
-
-        <div class="proj">
-          <div class="phead">
-            <span class="ptitle"
-              >Linux/DevOps Command Reference —
-              devops-command-summary.vercel.app</span
-            >
-            <span class="plink">84 Sections · 1,311 Code Blocks</span>
-          </div>
-          <div class="ptech">
-            Stack: HTML, CSS, JavaScript | Coverage: Linux, Docker, K8s,
-            Ansible, Terraform, AWS, Azure, GCP, RHCSA/RHCE exam commands
-          </div>
-          <ul class="plist">
-            <li>
-              Comprehensive enterprise-grade Linux/DevOps/Cloud command
-              reference covering System Administration, DevOps Tools, Monitoring
-              &amp; Security — includes dedicated RHCSA and RHCE exam command
-              sections
-            </li>
-          </ul>
-        </div>
-
-        <div class="proj">
-          <div class="phead">
-            <span class="ptitle"
-              >20 RHCSA Enterprise Lab Projects — github.com/samiulAsumel</span
-            >
-            <span class="plink">GitHub Portfolio</span>
-          </div>
-          <div class="ptech">
-            Stack: RHEL 9, Bash, systemd, SELinux, LVM, NFS, Podman, firewalld,
-            Ansible — covering 100% RHCSA EX200 objectives
-          </div>
-          <ul class="plist">
-            <li>
-              Enterprise user/group management with sudo and password aging,
-              secure file sharing with ACLs and SGID, SSH hardening, LVM storage
-              with extend/resize, SELinux context and port labeling, NFS
-              server/client, firewall rules, automated backup with cron, Podman
-              container deployment with systemd integration, and full automated
-              server provisioning script
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- CERTIFICATIONS -->
-      <section>
-        <h2>Certifications &amp; Training</h2>
-        <div class="cert">
-          <h3>
-            Red Hat Certified System Administrator (RHCSA) — EX200 | RHEL 9
-          </h3>
-          <p>
-            220-Day Mastery Program + 60-Day Exam Coaching | 20 Enterprise Lab
-            Projects | 100% Exam Objectives Covered
-          </p>
-          <p>Status: Exam Scheduled — Certification Pending 2026</p>
-        </div>
-        <div class="cert">
-          <h3>DevOps &amp; Cloud Engineering — 10-Month Structured Program</h3>
-          <p>
-            Docker &amp; Kubernetes · Ansible Automation · GitHub Actions CI/CD
-            · AWS Cloud (EC2, S3, IAM, VPC, RDS, CloudWatch) · Prometheus &amp;
-            Grafana · AI DevOps Workflows
-          </p>
-        </div>
-      </section>
-
-      <!-- EDUCATION -->
-      <section>
-        <h2>Education</h2>
-        <div class="cert">
-          <h3>Higher Secondary Certificate (HSC) — Commerce</h3>
-          <p>Bangladesh | Completed</p>
-        </div>
-      </section>
-
-      <!-- ADDITIONAL -->
-      <section>
-        <h2>Additional Information</h2>
-        <div class="add-grid">
-          <div class="ar">
-            <b>Port Domain Expertise:</b> Wharfrent billing, vehicle tracking,
-            jetty statistics, CF agent workflows, Bangladesh port regulations
-            &amp; Customs clearance
-          </div>
-          <div class="ar">
-            <b>Live IT Systems Built:</b> 4 production systems deployed —
-            actively used in real port operations
-          </div>
-          <div class="ar">
-            <b>Languages:</b> Bengali (Native), English (Basic–Intermediate),
-            Arabic (Basic)
-          </div>
-          <div class="ar">
-            <b>Target Roles:</b> IT Operations Specialist, Linux Systems Admin,
-            Port Technology Officer, OT Systems Engineer
-          </div>
-          <div class="ar">
-            <b>Target Companies:</b> DP World, Saudi Ports Authority (Mawani),
-            King Abdullah Port, NEOM Logistics, Kanoo Shipping
-          </div>
-          <div class="ar">
-            <b>Availability:</b> Immediate | Open to relocation — Saudi Arabia
-            (Dammam / Jeddah / Jubail)
-          </div>
-        </div>
-      </section>
+  <!-- ═══ NAV ══════════════════════════════════════════════════ -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">samiul<em>.dev</em></div>
+      <div class="nav-links">
+        <a href="#summary">Summary</a>
+        <a href="#competencies">Competencies</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-hire" href="mailto:sa.sumel91@gmail.com">Hire Me →</a>
+      <button class="hbg" id="hbg" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </body>
+  </nav>
+
+  <div class="mob" id="mob" aria-hidden="true">
+    <a href="#summary">Summary</a>
+    <a href="#competencies">Competencies</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#technical">Technical Dev</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ═══ HERO ══════════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="h-blobs" aria-hidden="true">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+    </div>
+    <div class="hgrid" aria-hidden="true"></div>
+
+    <div class="hcontent">
+      <div class="h-eye">
+        <span class="label">Port Digital Operations Specialist</span>
+      </div>
+      <h1 class="h-name">
+        <span class="fn">MD Samiul</span><br>
+        <span class="ln">Alam Sumel</span>
+      </h1>
+      <p class="h-title">Port Billing &nbsp;·&nbsp; Cargo Operations &nbsp;·&nbsp; Process Digitization &nbsp;·&nbsp; Saudi Maritime</p>
+      <p class="h-sub"><span id="tw"></span><span class="cur" aria-hidden="true"></span></p>
+      <p class="h-loc">
+        <svg class="loc-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 0 0-5 5c0 3.5 5 9 5 9s5-5.5 5-9a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+        <span>Mongla, Bangladesh</span> &nbsp;·&nbsp; Target: <span>Saudi Arabia — Q2 2027</span>
+      </p>
+
+      <!-- Stats from CV: 12+ years, 3 apps built, Q2 2027 -->
+      <div class="h-stats" aria-label="Key statistics">
+        <div class="hstat">
+          <div class="hstat-n"><span class="cnt" data-to="12">0</span><sup>+</sup></div>
+          <div class="hstat-l">Years Port Ops</div>
+        </div>
+        <div class="hstat-div" aria-hidden="true"></div>
+        <div class="hstat">
+          <div class="hstat-n"><span class="cnt" data-to="3">0</span></div>
+          <div class="hstat-l">Live Apps Built</div>
+        </div>
+        <div class="hstat-div" aria-hidden="true"></div>
+        <div class="hstat">
+          <div class="hstat-n">Q2</div>
+          <div class="hstat-l">2027 SA Target</div>
+        </div>
+      </div>
+
+      <div class="h-btns">
+        <a href="#projects" class="btn-primary">View Live Projects</a>
+        <a href="Samiul_Alam_Sumel_Final_CV.docx" download class="btn-outline">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 1v9M4 7l4 4 4-4"/><path d="M2 13h12"/></svg>
+          Download CV
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-ind" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ═══ PROFESSIONAL SUMMARY ══════════════════════════════════ -->
+  <section id="summary">
+    <div class="container">
+      <div class="sh reveal">
+        <span class="label">Professional Summary</span>
+        <h2>12+ Years at Mongla Port Authority</h2>
+      </div>
+      <div class="summary-box reveal">
+        <p>12+ years at Mongla Port Authority — Bangladesh's second-largest international seaport handling vehicle imports, bulk cargo and general cargo. Deep expertise in wharfrent billing, cargo dwell time management, terminal operations and CF agent coordination. Independently identified real port workflow inefficiencies and designed 3 live web applications using AI-assisted development — problem definition, requirements and validation based on 12+ years port domain expertise — now actively used by CF agents and port staff.</p>
+        <div class="summary-target">
+          <strong>Target:</strong> Port Operations or Port IT Operations role in Saudi Arabia — 2027 &nbsp;|&nbsp; DP World · Mawani · King Abdullah Port · NEOM Logistics · Kanoo Shipping
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CORE COMPETENCIES ════════════════════════════════════ -->
+  <section id="competencies">
+    <div class="container">
+      <div class="sh reveal">
+        <span class="label">Core Competencies</span>
+        <h2>Three Domains of Expertise</h2>
+      </div>
+      <div class="comp-grid">
+
+        <div class="comp-card reveal" data-delay="0">
+          <div class="comp-icon" aria-hidden="true">⚓</div>
+          <div class="comp-title">Port Operations</div>
+          <ul class="comp-list">
+            <li>Wharfrent Billing &amp; Slab Calculation</li>
+            <li>Cargo Dwell Time Management</li>
+            <li>CF Agent Coordination</li>
+            <li>Terminal Vehicle Tracking</li>
+            <li>Revenue Reporting</li>
+            <li>Port Automation System Usage</li>
+          </ul>
+        </div>
+
+        <div class="comp-card reveal" data-delay="1">
+          <div class="comp-icon" aria-hidden="true">📋</div>
+          <div class="comp-title">Cargo &amp; Documentation</div>
+          <ul class="comp-list">
+            <li>Customs Clearance Workflow</li>
+            <li>Maritime Documentation</li>
+            <li>Jetty Statistics &amp; Reports</li>
+            <li>Import/Delivery Records</li>
+            <li>Advance Billing Estimation</li>
+            <li>Multi-location Cargo Tracking</li>
+          </ul>
+        </div>
+
+        <div class="comp-card reveal" data-delay="2">
+          <div class="comp-icon" aria-hidden="true">💻</div>
+          <div class="comp-title">Digital &amp; Technical</div>
+          <ul class="comp-list">
+            <li>Process Digitization</li>
+            <li>Web Application Development (AI)</li>
+            <li>Firebase &amp; Cloud Deployment</li>
+            <li>Linux Admin (RHCSA Pursuing)</li>
+            <li>Data Analytics &amp; Dashboards</li>
+            <li>Arabic (Elementary — Learning)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WORK EXPERIENCE ══════════════════════════════════════ -->
+  <section id="experience">
+    <div class="container">
+      <div class="sh reveal">
+        <span class="label">Work Experience</span>
+        <h2>Uninterrupted Career at Mongla Port</h2>
+      </div>
+      <div class="tl reveal">
+
+        <div class="tl-item tl-current">
+          <div class="tl-header">
+            <div class="tl-date">NOV 2017 – PRESENT</div>
+            <span class="tl-badge">Current</span>
+          </div>
+          <div class="tl-role">Senior Outdoor Assistant — Port Operations &amp; IT Systems</div>
+          <div class="tl-org">Mongla Port Authority</div>
+          <div class="tl-desc">Bangladesh's second-largest international seaport handling vehicle imports, bulk cargo and general cargo.</div>
+
+          <div class="tl-section">Core Port Operations</div>
+          <ul class="tl-ul">
+            <li>Managed full cargo dwell time &amp; wharfrent billing cycle — slab-wise charges, VAT and levy computation for CF agents</li>
+            <li>Provided advance billing estimates to CF agents — reducing vehicle dwell time and terminal counter dependency</li>
+            <li>Tracked cargo &amp; vehicle positions across warehouse, shed and yard locations simultaneously</li>
+            <li>Maintained daily/monthly revenue reports, cumulative income statements &amp; vehicle balance records</li>
+            <li>Generated car import/delivery &amp; jetty statistics reports for port authority management</li>
+            <li>Coordinated CF agent documentation, billing queries &amp; advance payment planning</li>
+            <li>Operated port automation billing system — managing full wharfrent computation workflow</li>
+          </ul>
+
+          <div class="tl-section">Self-Initiated Digital Work</div>
+          <ul class="tl-ul">
+            <li>Identified critical inefficiencies in manual paper-based billing and tracking workflows</li>
+            <li>Designed and deployed 3 live web applications using AI-assisted development — domain expertise directed the AI, real CF agents and port staff use the systems daily</li>
+            <li><a href="https://portbill.vercel.app" target="_blank" rel="noopener">portbill.vercel.app</a> — advance wharfrent calculator for C&amp;F agents, avoiding permanent system entries</li>
+            <li><a href="https://otbill.vercel.app" target="_blank" rel="noopener">otbill.vercel.app</a> — OT billing web tool replacing manual Excel for all port staff</li>
+            <li><a href="https://monthly-car-balance.vercel.app" target="_blank" rel="noopener">monthly-car-balance.vercel.app</a> — live vehicle tracking replacing personal Excel with cloud dashboard</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-date">NOV 2013 – NOV 2017</div>
+          <div class="tl-role">Junior Outdoor Assistant — Port &amp; Terminal Operations</div>
+          <div class="tl-org">Mongla Port Authority</div>
+          <div class="tl-desc">Foundation of 12+ year uninterrupted career at Bangladesh's second-largest international seaport.</div>
+          <ul class="tl-ul">
+            <li>Assisted in port inspections, vessel operations and cargo handling under senior supervision</li>
+            <li>Monitored cargo dwell time and vehicle positioning across terminal locations</li>
+            <li>Maintained inspection reports, cargo handling records and incident logs</li>
+            <li>Coordinated with CF agents for efficient cargo clearance workflows</li>
+            <li>Built foundational expertise in wharfrent billing, maritime logistics and customs clearance</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LIVE PORT SYSTEMS ════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="sh reveal">
+        <span class="label">Live Port Systems — Self-Built</span>
+        <h2>4 Production Systems in Active Use</h2>
+      </div>
+      <div class="proj-grid">
+
+        <div class="pcard reveal" data-delay="0">
+          <div class="pcard-num" aria-hidden="true">01</div>
+          <div class="pcard-head">
+            <div>
+              <div class="pcard-title">Port Billing Web Application</div>
+              <div class="pcard-url">portbill.vercel.app</div>
+            </div>
+            <span class="plive">LIVE</span>
+          </div>
+          <div class="pcard-prob">
+            <strong>Problem</strong>
+            Mongla Port's official system creates permanent final bills that cannot be deleted. C&amp;F agents had no way to estimate charges without committing to a final entry.
+          </div>
+          <div class="pcard-sol">
+            <strong>Solution</strong>
+            Real-time advance wharfrent calculator for Car &amp; General Cargo. Slab-based billing, VAT, levy, inside/outside cargo split, hoisting charge auto-calculation, print-ready output. Actively used by C&amp;F agents at Mongla Port.
+          </div>
+          <a class="pcard-link" href="https://portbill.vercel.app" target="_blank" rel="noopener">
+            Open Live App
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="pcard reveal" data-delay="1">
+          <div class="pcard-num" aria-hidden="true">02</div>
+          <div class="pcard-head">
+            <div>
+              <div class="pcard-title">Daily Car Balance &amp; Location Tracking</div>
+              <div class="pcard-url">monthly-car-balance.vercel.app</div>
+            </div>
+            <span class="plive">LIVE</span>
+          </div>
+          <div class="pcard-prob">
+            <strong>Problem</strong>
+            Vehicle tracking across warehouse, shed and yard was in personal Excel — only visible to one person.
+          </div>
+          <div class="pcard-sol">
+            <strong>Solution</strong>
+            Live cloud dashboard replacing personal Excel. All staff view real-time vehicle positions across terminal areas. Firebase sync, KPI analytics, monthly comparison reports, Excel export.
+          </div>
+          <a class="pcard-link" href="https://monthly-car-balance.vercel.app" target="_blank" rel="noopener">
+            Open Live App
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="pcard reveal" data-delay="2">
+          <div class="pcard-num" aria-hidden="true">03</div>
+          <div class="pcard-head">
+            <div>
+              <div class="pcard-title">OT Bill Management System</div>
+              <div class="pcard-url">otbill.vercel.app</div>
+            </div>
+            <span class="plive">LIVE</span>
+          </div>
+          <div class="pcard-prob">
+            <strong>Problem</strong>
+            Overtime billing was manual Excel — complex, time-consuming and error-prone every billing cycle.
+          </div>
+          <div class="pcard-sol">
+            <strong>Solution</strong>
+            Any staff member adds profile once and generates final OT bill instantly. Employee database, auto hourly rate calculation, date-wise OT entry, A4 print output.
+          </div>
+          <a class="pcard-link" href="https://otbill.vercel.app" target="_blank" rel="noopener">
+            Open Live App
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <div class="pcard reveal" data-delay="3">
+          <div class="pcard-num" aria-hidden="true">04</div>
+          <div class="pcard-head">
+            <div>
+              <div class="pcard-title">Linux/DevOps Command Reference</div>
+              <div class="pcard-url">devops-command-summary.vercel.app</div>
+            </div>
+            <span class="plive">LIVE</span>
+          </div>
+          <div class="pcard-prob">
+            <strong>About</strong>
+            1,311 command blocks, 84 sections — Linux, Docker, Kubernetes, Terraform, AWS, Azure, Security.
+          </div>
+          <div class="pcard-sol">
+            <strong>Purpose</strong>
+            Built during RHCSA preparation as personal study reference.
+          </div>
+          <a class="pcard-link" href="https://devops-command-summary.vercel.app" target="_blank" rel="noopener">
+            Open Live App
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TECHNICAL DEVELOPMENT ═══════════════════════════════ -->
+  <section id="technical">
+    <div class="container">
+      <div class="sh reveal">
+        <span class="label">Technical Development</span>
+        <h2>Self-Directed Learning</h2>
+      </div>
+      <div class="dev-grid">
+
+        <div class="dev-card reveal" data-delay="0">
+          <div class="dev-icon" aria-hidden="true">🐧</div>
+          <div class="dev-title">Linux Administration — RHCSA EX200 Preparation</div>
+          <div class="dev-meta">Self-Directed &nbsp;·&nbsp; Jan 2025 – Present</div>
+          <ul class="dev-ul">
+            <li>RHCSA EX200 — RHEL 9 structured 60-day program (exam scheduled 2026)</li>
+            <li>Topics: systemd, SELinux, firewalld, LVM, NFS, SSH hardening, ACLs, Podman, Bash scripting</li>
+            <li>Completed: user/group management, file permissions, process management, basic storage and networking</li>
+            <li>AI-assisted development — Claude (prompt engineering), problem definition, requirement specification, testing and production deployment on Vercel</li>
+          </ul>
+        </div>
+
+        <div class="dev-card reveal" data-delay="1">
+          <div class="dev-icon" aria-hidden="true">🕌</div>
+          <div class="dev-title">Arabic Language — Saudi Workplace Readiness</div>
+          <div class="dev-meta">Self-Directed &nbsp;·&nbsp; 2025 – Present</div>
+          <ul class="dev-ul">
+            <li>MSA and Saudi spoken Arabic — maritime and port operations terminology focus</li>
+            <li>Goal: conversational level for Saudi port workplace communication</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EDUCATION ════════════════════════════════════════════ -->
+  <section id="education">
+    <div class="container">
+      <div class="sh reveal">
+        <span class="label">Education</span>
+        <h2>Academic Background</h2>
+      </div>
+      <div class="edu-grid reveal">
+        <div class="edu-card">
+          <div class="edu-yr-badge">2009 – 2011</div>
+          <div class="edu-degree">Higher Secondary Certificate — Business Studies</div>
+          <div class="edu-inst">Khulna Public College</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-yr-badge">1999 – 2009</div>
+          <div class="edu-degree">Secondary School Certificate — Business Studies</div>
+          <div class="edu-inst">Mongla Bandar Secondary School</div>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:2.4rem">
+        <p class="lang-label">Languages</p>
+        <div class="lang-row">
+          <div class="lang-pill">
+            <span class="lang-flag" aria-hidden="true">🇧🇩</span>
+            <div>
+              <span class="lang-name">Bengali</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+          </div>
+          <div class="lang-pill">
+            <span class="lang-flag" aria-hidden="true">🇬🇧</span>
+            <div>
+              <span class="lang-name">English</span>
+              <span class="lang-level">Professional Working</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:65%"></div></div>
+          </div>
+          <div class="lang-pill">
+            <span class="lang-flag" aria-hidden="true">🇸🇦</span>
+            <div>
+              <span class="lang-name">Arabic</span>
+              <span class="lang-level">Elementary — Learning</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:20%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DOWNLOAD RESUME ══════════════════════════════════════ -->
+  <div class="resume-section">
+    <div class="container">
+      <div class="resume-card reveal">
+        <div class="resume-card-left">
+          <div class="resume-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="resume-info">
+            <h3>Samiul_Alam_Sumel_Final_CV.docx</h3>
+            <p>Full CV &nbsp;·&nbsp; Port Digital Operations Specialist &nbsp;·&nbsp; Updated 2026</p>
+          </div>
+        </div>
+        <a class="btn-download" href="Samiul_Alam_Sumel_Final_CV.docx" download>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 1v9M4 7l4 4 4-4"/><path d="M2 13h12"/></svg>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CONTACT ══════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-wrap reveal">
+        <div class="contact-left">
+          <span class="label">Contact</span>
+          <h2>Available for<br>Relocation to Saudi Arabia</h2>
+          <p>Open to Port Operations or Port IT Operations roles. 12+ years domain expertise — immediately operational from day one.</p>
+          <div class="avail">
+            <span class="avail-dot" aria-hidden="true"></span>
+            Available · Target: Q2 2027
+          </div>
+        </div>
+        <div class="clinks">
+          <a class="clink" href="mailto:sa.sumel91@gmail.com">
+            <span class="clink-icon" aria-hidden="true">✉️</span>
+            <div>
+              <span class="clink-lbl">Email</span>
+              <span class="clink-val">sa.sumel91@gmail.com</span>
+            </div>
+            <svg class="clink-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a class="clink" href="tel:+8801312312512">
+            <span class="clink-icon" aria-hidden="true">📞</span>
+            <div>
+              <span class="clink-lbl">Phone</span>
+              <span class="clink-val">+880 1312 312512</span>
+            </div>
+            <svg class="clink-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a class="clink" href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener">
+            <span class="clink-icon" aria-hidden="true">💼</span>
+            <div>
+              <span class="clink-lbl">LinkedIn</span>
+              <span class="clink-val">linkedin.com/in/samiul-alam-sumel</span>
+            </div>
+            <svg class="clink-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a class="clink" href="https://github.com/samiulAsumel" target="_blank" rel="noopener">
+            <span class="clink-icon" aria-hidden="true">🐙</span>
+            <div>
+              <span class="clink-lbl">GitHub</span>
+              <span class="clink-val">github.com/samiulAsumel</span>
+            </div>
+            <svg class="clink-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="ft">
+        MD SAMIUL ALAM SUMEL &nbsp;·&nbsp; <span>Mongla, Bangladesh</span> &nbsp;·&nbsp; sa.sumel91@gmail.com
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="totop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
