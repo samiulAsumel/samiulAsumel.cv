@@ -6,19 +6,19 @@
 /* ── DESIGN TOKENS ───────────────────────────────────────────── */
 :root {
   /* Base backgrounds */
-  --bg:      #030c1a;
-  --bg2:     #061628;
-  --bg3:     #0b2040;
+  --bg:      #000000;
+  --bg2:     #0a0a0a;
+  --bg3:     #141414;
 
   /* Glass surfaces */
-  --glass:        rgba(8, 20, 40, 0.80);
-  --glass-hover:  rgba(10, 25, 48, 0.90);
+  --glass:        rgba(20, 20, 20, 0.85);
+  --glass-hover:  rgba(30, 30, 30, 0.92);
   --glass-light:  rgba(255, 255, 255, 0.025);
 
   /* Borders */
-  --bd:    rgba(255, 255, 255, 0.065);
-  --bd2:   rgba(255, 255, 255, 0.12);
-  --bd-a:  rgba(240, 160, 48, 0.28);
+  --bd:    rgba(255, 255, 255, 0.08);
+  --bd2:   rgba(255, 255, 255, 0.15);
+  --bd-a:  rgba(240, 160, 48, 0.35);
 
   /* Amber accent */
   --a:      #f0a030;
@@ -31,10 +31,10 @@
   --blue:  #3d8ef0;
   --green: #00c896;
 
-  /* Text scale */
-  --tx:   #ddeaff;
-  --tx-m: #5e7ea0;
-  --tx-d: #243550;
+  /* Text scale - enhanced for visibility on black */
+  --tx:   #ffffff;
+  --tx-m: #a0b8d0;
+  --tx-d: #607080;
 
   /* Typography */
   --ff:   'Space Grotesk', system-ui, sans-serif;
@@ -84,8 +84,8 @@ body::before {
   z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 60% 50% at 10% 25%, rgba(240,160,48,.055) 0%, transparent 65%),
-    radial-gradient(ellipse 55% 45% at 90% 75%, rgba(61,142,240,.040) 0%, transparent 65%);
+    radial-gradient(ellipse 60% 50% at 10% 25%, rgba(240,160,48,.035) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 45% at 90% 75%, rgba(61,142,240,.025) 0%, transparent 65%);
   animation: ambientDrift 22s ease-in-out infinite alternate;
 }
 
@@ -227,11 +227,11 @@ nav {
   border-bottom: 1px solid transparent;
 }
 nav.scrolled {
-  background: rgba(3, 12, 26, .94);
+  background: rgba(0, 0, 0, .95);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom-color: var(--bd);
-  box-shadow: 0 4px 32px rgba(0,0,0,.55);
+  box-shadow: 0 4px 32px rgba(0,0,0,.65);
 }
 
 .nav-inner {
@@ -253,7 +253,7 @@ nav.scrolled {
   letter-spacing: .02em;
   flex-shrink: 0;
 }
-.nav-logo em { color: var(--tx-d); font-style: normal; }
+.nav-logo em { color: var(--tx-m); font-style: normal; }
 
 .nav-links {
   display: flex;
@@ -328,7 +328,7 @@ nav.scrolled {
   position: fixed;
   top: 60px; left: 0; right: 0;
   z-index: 7999;
-  background: rgba(4, 12, 26, .97);
+  background: rgba(0, 0, 0, .98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--bd);
@@ -474,7 +474,7 @@ nav.scrolled {
 .h-type {
   font-family: var(--mono);
   font-size: clamp(.7rem, 1.5vw, .82rem);
-  color: var(--tx-d);
+  color: var(--tx-m);
   letter-spacing: .05em;
   min-height: 1.5em;
   margin-bottom: 1.6rem;
@@ -502,7 +502,7 @@ nav.scrolled {
   gap: .3rem;
   font-family: var(--mono);
   font-size: .68rem;
-  color: var(--tx-d);
+  color: var(--tx-m);
   letter-spacing: .03em;
 }
 .hc-link {
@@ -522,7 +522,7 @@ nav.scrolled {
 .h-stats {
   display: inline-flex;
   align-items: center;
-  background: rgba(8, 20, 40, .72);
+  background: rgba(20, 20, 20, .78);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--bd);
@@ -548,7 +548,7 @@ nav.scrolled {
 .hstat-l {
   font-family: var(--mono);
   font-size: .58rem;
-  color: var(--tx-d);
+  color: var(--tx-m);
   letter-spacing: .1em;
   text-transform: uppercase;
   margin-top: .22rem;
@@ -617,7 +617,7 @@ nav.scrolled {
   font-family: var(--mono);
   font-size: .58rem;
   letter-spacing: .16em;
-  color: var(--tx-d);
+  color: var(--tx-m);
   text-transform: uppercase;
   animation: floatY 2.8s ease-in-out infinite;
 }
@@ -701,7 +701,7 @@ section { padding: 100px 0; position: relative; }
 .target-cos span {
   font-family: var(--mono);
   font-size: .65rem;
-  color: var(--tx-d);
+  color: var(--tx-m);
   background: rgba(255,255,255,.035);
   border: 1px solid var(--bd);
   border-radius: 4px;
@@ -840,7 +840,7 @@ section { padding: 100px 0; position: relative; }
 .tl-date {
   font-family: var(--mono);
   font-size: .67rem;
-  color: var(--tx-d);
+  color: var(--tx-m);
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -859,7 +859,7 @@ section { padding: 100px 0; position: relative; }
 }
 .tl-desc {
   font-size: .83rem;
-  color: var(--tx-d);
+  color: var(--tx-m);
   font-style: italic;
   line-height: 1.55;
   margin-bottom: 1rem;
@@ -871,7 +871,7 @@ section { padding: 100px 0; position: relative; }
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--tx-d);
+  color: var(--tx-m);
   border-left: 2px solid var(--a-dk);
   padding-left: .7rem;
   margin: 1.2rem 0 .6rem;
@@ -999,7 +999,7 @@ section { padding: 100px 0; position: relative; }
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--tx-d);
+  color: var(--tx-m);
   margin-bottom: .18rem;
 }
 .pcard-dl dd {
@@ -1067,7 +1067,7 @@ section { padding: 100px 0; position: relative; }
 .td-meta {
   font-family: var(--mono);
   font-size: .67rem;
-  color: var(--tx-d);
+  color: var(--tx-m);
   letter-spacing: .05em;
   padding-bottom: .75rem;
   margin-bottom: .2rem;
@@ -1331,7 +1331,7 @@ section { padding: 100px 0; position: relative; }
 .clink:hover .clink-ico { background: rgba(240,160,48,.12); }
 
 .clink-info { flex: 1; min-width: 0; }
-.clink-lbl  { font-family: var(--mono); font-size: .62rem; color: var(--tx-d); letter-spacing: .07em; display: block; margin-bottom: 1px; }
+.clink-lbl  { font-family: var(--mono); font-size: .62rem; color: var(--tx-m); letter-spacing: .07em; display: block; margin-bottom: 1px; }
 .clink-val  { font-size: .9rem; color: var(--tx); font-weight: 600; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .clink-arr  { width: 14px; margin-left: auto; stroke: var(--tx-d); flex-shrink: 0; opacity: 0; transition: opacity .2s, stroke .2s, transform .2s; }
@@ -1359,18 +1359,18 @@ footer {
   color: var(--a);
   letter-spacing: .02em;
 }
-.ft-brand em { color: var(--tx-d); font-style: normal; }
+.ft-brand em { color: var(--tx-m); font-style: normal; }
 .ft-copy {
   font-family: var(--mono);
   font-size: .63rem;
-  color: var(--tx-d);
+  color: var(--tx-m);
   letter-spacing: .04em;
 }
 .ft-links { display: flex; gap: 1.4rem; }
 .ft-links a {
   font-family: var(--mono);
   font-size: .63rem;
-  color: var(--tx-d);
+  color: var(--tx-m);
   letter-spacing: .05em;
   transition: color .2s;
 }
@@ -1384,7 +1384,7 @@ footer {
   bottom: 28px; right: 28px;
   z-index: 8000;
   width: 46px; height: 46px;
-  background: rgba(8, 20, 40, .92);
+  background: rgba(20, 20, 20, .92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--bd2);
