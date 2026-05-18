@@ -1,601 +1,1046 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Port Digital Operations Specialist — 12+ years Mongla Port Authority. Wharfrent billing, cargo operations, process digitization. Targeting Saudi Arabia 2027.">
-  <meta name="theme-color" content="#030c1a">
-  <title>MD Samiul Alam Sumel — Port Digital Operations Specialist</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="canonical" href="https://samiul.dev">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Port Digital Operations Specialist — 12+ years Mongla Port Authority. Wharfrent billing, cargo operations, process digitization. Targeting Saudi Arabia 2027."
+    />
+    <meta name="theme-color" content="#030c1a" />
+    <title>MD Samiul Alam Sumel — Port Digital Operations Specialist</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="canonical" href="https://samiul.dev" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://samiul.dev">
-  <meta property="og:title" content="MD Samiul Alam Sumel — Port Digital Operations Specialist">
-  <meta property="og:description" content="12+ years at Mongla Port Authority. 3 live web apps in daily port use. Targeting Saudi Arabia Q2 2027.">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="MD Samiul Alam Sumel — Port Digital Operations Specialist">
-  <meta name="twitter:description" content="12+ years Mongla Port Authority. 3 live port systems. Targeting Saudi Arabia 2027.">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://samiul.dev" />
+    <meta
+      property="og:title"
+      content="MD Samiul Alam Sumel — Port Digital Operations Specialist"
+    />
+    <meta
+      property="og:description"
+      content="12+ years at Mongla Port Authority. 3 live web apps in daily port use. Targeting Saudi Arabia Q2 2027."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="MD Samiul Alam Sumel — Port Digital Operations Specialist"
+    />
+    <meta
+      name="twitter:description"
+      content="12+ years Mongla Port Authority. 3 live port systems. Targeting Saudi Arabia 2027."
+    />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "MD Samiul Alam Sumel",
-    "jobTitle": "Port Digital Operations Specialist",
-    "email": "sa.sumel91@gmail.com",
-    "telephone": "+8801312312512",
-    "url": "https://samiul.dev",
-    "sameAs": ["https://linkedin.com/in/samiul-alam-sumel"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Mongla",
-      "addressCountry": "BD"
-    },
-    "knowsAbout": ["Port Operations","Cargo Management","Wharfrent Billing","Linux Administration","Web Application Development"]
-  }
-  </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "MD Samiul Alam Sumel",
+        "jobTitle": "Port Digital Operations Specialist",
+        "email": "sa.sumel91@gmail.com",
+        "telephone": "+8801312312512",
+        "url": "https://samiul.dev",
+        "sameAs": ["https://linkedin.com/in/samiul-alam-sumel"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mongla",
+          "addressCountry": "BD"
+        },
+        "knowsAbout": [
+          "Port Operations",
+          "Cargo Management",
+          "Wharfrent Billing",
+          "Linux Administration",
+          "Web Application Development"
+        ]
+      }
+    </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Scroll progress -->
+    <div id="pgbar" role="progressbar" aria-hidden="true"></div>
 
-  <!-- Scroll progress -->
-  <div id="pgbar" role="progressbar" aria-hidden="true"></div>
+    <!-- Particle canvas -->
+    <canvas id="bg" aria-hidden="true"></canvas>
 
-  <!-- Particle canvas -->
-  <canvas id="bg" aria-hidden="true"></canvas>
-
-  <!-- ═══ NAVIGATION ════════════════════════════════════════════ -->
-  <nav id="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Back to top">samiul<em>.dev</em></a>
-      <div class="nav-links" role="list">
-        <a href="#summary" role="listitem">Summary</a>
-        <a href="#competencies" role="listitem">Competencies</a>
-        <a href="#experience" role="listitem">Experience</a>
-        <a href="#projects" role="listitem">Projects</a>
-        <a href="#education" role="listitem">Education</a>
-        <a href="#contact" role="listitem">Contact</a>
-      </div>
-      <a class="nav-cta" href="mailto:sa.sumel91@gmail.com" aria-label="Send hire email">Hire Me →</a>
-      <button type="button" class="hbg" id="hbg" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mob">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile menu -->
-  <div class="mob" id="mob" aria-hidden="true" role="dialog" aria-label="Navigation menu">
-    <a href="#summary">Summary</a>
-    <a href="#competencies">Competencies</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#technical">Technical Dev</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-  <!-- ═══ HERO ══════════════════════════════════════════════════ -->
-  <section id="hero" aria-label="Introduction">
-
-    <!-- Background elements -->
-    <div class="h-bg" aria-hidden="true">
-      <div class="blob blob-a"></div>
-      <div class="blob blob-b"></div>
-      <div class="blob blob-c"></div>
-      <div class="h-grid"></div>
-    </div>
-
-    <div class="h-wrap">
-
-      <div class="h-eyebrow">
-        <span class="h-tag">
-          <svg width="6" height="6" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
-          Available for Relocation — Saudi Arabia
-        </span>
-      </div>
-
-      <h1 class="h-name">
-        <span class="h-fn">MD Samiul</span>
-        <span class="h-ln">Alam Sumel</span>
-      </h1>
-
-      <p class="h-role">Port Digital Operations Specialist</p>
-      <p class="h-spec">Port Billing &nbsp;·&nbsp; Cargo Operations &nbsp;·&nbsp; Process Digitization &nbsp;·&nbsp; Saudi Maritime</p>
-
-      <p class="h-type" aria-live="polite">
-        <span id="tw"></span><span class="blink" aria-hidden="true">|</span>
-      </p>
-
-      <div class="h-contact" aria-label="Contact details">
-        <span class="hc-item">
-          <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a5 5 0 0 0-5 5c0 3.5 5 9 5 9s5-5.5 5-9a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-          Mongla, Bangladesh
-        </span>
-        <span class="hc-dot" aria-hidden="true"></span>
-        <a class="hc-item hc-link" href="mailto:sa.sumel91@gmail.com">sa.sumel91@gmail.com</a>
-        <span class="hc-dot" aria-hidden="true"></span>
-        <a class="hc-item hc-link" href="tel:+8801312312512">+880&nbsp;1312&nbsp;312512</a>
-        <span class="hc-dot" aria-hidden="true"></span>
-        <a class="hc-item hc-link" href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-
-      <div class="h-stats" aria-label="Key career highlights">
-        <div class="hstat">
-          <div class="hstat-n"><span class="cnt" data-to="12">0</span><sup>+</sup></div>
-          <div class="hstat-l">Years Port Ops</div>
+    <!-- ═══ NAVIGATION ════════════════════════════════════════════ -->
+    <nav id="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo" aria-label="Back to top"
+          >samiul<em>.dev</em></a
+        >
+        <div class="nav-links" role="list">
+          <a href="#summary" role="listitem">Summary</a>
+          <a href="#competencies" role="listitem">Competencies</a>
+          <a href="#experience" role="listitem">Experience</a>
+          <a href="#projects" role="listitem">Projects</a>
+          <a href="#education" role="listitem">Education</a>
+          <a href="#contact" role="listitem">Contact</a>
         </div>
-        <div class="hstat-sep" aria-hidden="true"></div>
-        <div class="hstat">
-          <div class="hstat-n"><span class="cnt" data-to="3">0</span></div>
-          <div class="hstat-l">Live Apps Built</div>
-        </div>
-        <div class="hstat-sep" aria-hidden="true"></div>
-        <div class="hstat">
-          <div class="hstat-n">Q2</div>
-          <div class="hstat-l">2027 SA Target</div>
-        </div>
+        <a
+          class="nav-cta"
+          href="mailto:sa.sumel91@gmail.com"
+          aria-label="Send hire email"
+          >Hire Me →</a
+        >
+        <button
+          type="button"
+          class="hbg"
+          id="hbg"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mob"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </nav>
 
-      <div class="h-btns">
-        <a href="#projects" class="btn-p">View Live Projects</a>
-        <a href="Samiul_Alam_Sumel_Final_CV.docx" download class="btn-o">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 1v9M4 7l4 4 4-4"/><path d="M2 13h12"/></svg>
-          Download CV
-        </a>
-      </div>
-
+    <!-- Mobile menu -->
+    <div
+      class="mob"
+      id="mob"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Navigation menu"
+    >
+      <a href="#summary">Summary</a>
+      <a href="#competencies">Competencies</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#technical">Technical Dev</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </div>
 
-    <div class="h-scroll" aria-hidden="true">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-      <span>scroll</span>
-    </div>
-
-  </section>
-
-  <!-- ═══ PROFESSIONAL SUMMARY ══════════════════════════════════ -->
-  <section id="summary" aria-labelledby="sum-h2">
-    <div class="container">
-      <header class="sh reveal">
-        <span class="lbl">◆ Professional Summary</span>
-        <h2 id="sum-h2">12+ Years at Mongla Port Authority</h2>
-      </header>
-      <div class="sum-body reveal">
-        <blockquote class="sum-quote">
-          12+ years at Mongla Port Authority — Bangladesh's second-largest international seaport handling vehicle imports, bulk cargo and general cargo. Deep expertise in wharfrent billing, cargo dwell time management, terminal operations and CF agent coordination. Independently identified real port workflow inefficiencies and designed 3 live web applications using AI-assisted development — problem definition, requirements and validation based on 12+ years port domain expertise — now actively used by CF agents and port staff.
-        </blockquote>
-        <div class="sum-target">
-          <span class="target-lbl">Target</span>
-          <span class="target-txt">Port Operations or Port IT Operations role in Saudi Arabia — 2027</span>
-          <div class="target-cos">
-            <span>DP World</span><span>Mawani</span><span>King Abdullah Port</span><span>NEOM Logistics</span><span>Kanoo Shipping</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ CORE COMPETENCIES ════════════════════════════════════ -->
-  <section id="competencies" aria-labelledby="comp-h2">
-    <div class="container">
-      <header class="sh reveal">
-        <span class="lbl">◆ Core Competencies</span>
-        <h2 id="comp-h2">Three Domains of Expertise</h2>
-      </header>
-      <div class="comp-grid">
-
-        <article class="comp-card reveal" data-delay="0">
-          <div class="comp-ico" aria-hidden="true">⚓</div>
-          <h3 class="comp-title">Port Operations</h3>
-          <ul class="sk-list" aria-label="Port Operations skills">
-            <li>Wharfrent Billing &amp; Slab Calculation</li>
-            <li>Cargo Dwell Time Management</li>
-            <li>CF Agent Coordination</li>
-            <li>Terminal Vehicle Tracking</li>
-            <li>Revenue Reporting</li>
-            <li>Port Automation System Usage</li>
-          </ul>
-        </article>
-
-        <article class="comp-card reveal" data-delay="1">
-          <div class="comp-ico" aria-hidden="true">📋</div>
-          <h3 class="comp-title">Cargo &amp; Documentation</h3>
-          <ul class="sk-list" aria-label="Cargo and Documentation skills">
-            <li>Customs Clearance Workflow</li>
-            <li>Maritime Documentation</li>
-            <li>Jetty Statistics &amp; Reports</li>
-            <li>Import/Delivery Records</li>
-            <li>Advance Billing Estimation</li>
-            <li>Multi-location Cargo Tracking</li>
-          </ul>
-        </article>
-
-        <article class="comp-card reveal" data-delay="2">
-          <div class="comp-ico" aria-hidden="true">💻</div>
-          <h3 class="comp-title">Digital &amp; Technical</h3>
-          <ul class="sk-list" aria-label="Digital and Technical skills">
-            <li>Process Digitization</li>
-            <li>Web Application Development (AI)</li>
-            <li>Firebase &amp; Cloud Deployment</li>
-            <li>Linux Admin (RHCSA Pursuing)</li>
-            <li>Data Analytics &amp; Dashboards</li>
-            <li>Arabic (Elementary — Learning)</li>
-          </ul>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ WORK EXPERIENCE ══════════════════════════════════════ -->
-  <section id="experience" aria-labelledby="exp-h2">
-    <div class="container">
-      <header class="sh reveal">
-        <span class="lbl">◆ Work Experience</span>
-        <h2 id="exp-h2">Uninterrupted Career at Mongla Port</h2>
-      </header>
-
-      <div class="tl">
-
-        <!-- Current role -->
-        <article class="tl-item tl-cur reveal">
-          <div class="tl-dot" aria-hidden="true"></div>
-          <div class="tl-body">
-            <div class="tl-hdr">
-              <time class="tl-date" datetime="2017-11">Nov 2017 – Present</time>
-              <span class="badge-live">● Current</span>
-            </div>
-            <h3 class="tl-role">Senior Outdoor Assistant — Port Operations &amp; IT Systems</h3>
-            <div class="tl-org">Mongla Port Authority</div>
-            <p class="tl-desc">Bangladesh's second-largest international seaport handling vehicle imports, bulk cargo and general cargo.</p>
-
-            <p class="tl-sec-lbl">Core Port Operations</p>
-            <ul class="tl-ul">
-              <li>Managed full cargo dwell time &amp; wharfrent billing cycle — slab-wise charges, VAT and levy computation for CF agents</li>
-              <li>Provided advance billing estimates to CF agents — reducing vehicle dwell time and terminal counter dependency</li>
-              <li>Tracked cargo &amp; vehicle positions across warehouse, shed and yard locations simultaneously</li>
-              <li>Maintained daily/monthly revenue reports, cumulative income statements &amp; vehicle balance records</li>
-              <li>Generated car import/delivery &amp; jetty statistics reports for port authority management</li>
-              <li>Coordinated CF agent documentation, billing queries &amp; advance payment planning</li>
-              <li>Operated port automation billing system — managing full wharfrent computation workflow</li>
-            </ul>
-
-            <p class="tl-sec-lbl">Self-Initiated Digital Work</p>
-            <ul class="tl-ul">
-              <li>Identified critical inefficiencies in manual paper-based billing and tracking workflows</li>
-              <li>Designed and deployed 3 live web applications using AI-assisted development — domain expertise directed the AI, real CF agents and port staff use the systems daily</li>
-              <li><a href="https://portbill.vercel.app" target="_blank" rel="noopener">portbill.vercel.app</a> — advance wharfrent calculator for C&amp;F agents, avoiding permanent system entries</li>
-              <li><a href="https://otbill.vercel.app" target="_blank" rel="noopener">otbill.vercel.app</a> — OT billing web tool replacing manual Excel for all port staff</li>
-              <li><a href="https://monthly-car-balance.vercel.app" target="_blank" rel="noopener">monthly-car-balance.vercel.app</a> — live vehicle tracking replacing personal Excel with cloud dashboard</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Previous role -->
-        <article class="tl-item reveal">
-          <div class="tl-dot" aria-hidden="true"></div>
-          <div class="tl-body">
-            <div class="tl-hdr">
-              <time class="tl-date" datetime="2013-11">Nov 2013 – Nov 2017</time>
-            </div>
-            <h3 class="tl-role">Junior Outdoor Assistant — Port &amp; Terminal Operations</h3>
-            <div class="tl-org">Mongla Port Authority</div>
-            <p class="tl-desc">Foundation of 12+ year uninterrupted career at Bangladesh's second-largest international seaport.</p>
-            <ul class="tl-ul">
-              <li>Assisted in port inspections, vessel operations and cargo handling under senior supervision</li>
-              <li>Monitored cargo dwell time and vehicle positioning across terminal locations</li>
-              <li>Maintained inspection reports, cargo handling records and incident logs</li>
-              <li>Coordinated with CF agents for efficient cargo clearance workflows</li>
-              <li>Built foundational expertise in wharfrent billing, maritime logistics and customs clearance</li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ LIVE PORT SYSTEMS ════════════════════════════════════ -->
-  <section id="projects" aria-labelledby="proj-h2">
-    <div class="container">
-      <header class="sh reveal">
-        <span class="lbl">◆ Live Port Systems — Self-Built</span>
-        <h2 id="proj-h2">4 Production Systems in Active Use</h2>
-      </header>
-      <div class="proj-grid">
-
-        <article class="pcard reveal" data-delay="0">
-          <div class="pcard-num" aria-hidden="true">01</div>
-          <header class="pcard-hdr">
-            <div>
-              <h3 class="pcard-title">Port Billing Web Application</h3>
-              <div class="pcard-url">portbill.vercel.app</div>
-            </div>
-            <span class="badge-live" aria-label="Live system">● LIVE</span>
-          </header>
-          <dl class="pcard-dl">
-            <dt>Problem</dt>
-            <dd>Mongla Port's official system creates permanent final bills that cannot be deleted. C&amp;F agents had no way to estimate charges without committing to a final entry.</dd>
-            <dt>Solution</dt>
-            <dd>Real-time advance wharfrent calculator for Car &amp; General Cargo. Slab-based billing, VAT, levy, inside/outside cargo split, hoisting charge auto-calculation, print-ready output. Actively used by C&amp;F agents at Mongla Port.</dd>
-          </dl>
-          <a class="pcard-link" href="https://portbill.vercel.app" target="_blank" rel="noopener">
-            Open Live App
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </article>
-
-        <article class="pcard reveal" data-delay="1">
-          <div class="pcard-num" aria-hidden="true">02</div>
-          <header class="pcard-hdr">
-            <div>
-              <h3 class="pcard-title">Daily Car Balance &amp; Location Tracking</h3>
-              <div class="pcard-url">monthly-car-balance.vercel.app</div>
-            </div>
-            <span class="badge-live" aria-label="Live system">● LIVE</span>
-          </header>
-          <dl class="pcard-dl">
-            <dt>Problem</dt>
-            <dd>Vehicle tracking across warehouse, shed and yard was in personal Excel — only visible to one person.</dd>
-            <dt>Solution</dt>
-            <dd>Live cloud dashboard replacing personal Excel. All staff view real-time vehicle positions across terminal areas. Firebase sync, KPI analytics, monthly comparison reports, Excel export.</dd>
-          </dl>
-          <a class="pcard-link" href="https://monthly-car-balance.vercel.app" target="_blank" rel="noopener">
-            Open Live App
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </article>
-
-        <article class="pcard reveal" data-delay="2">
-          <div class="pcard-num" aria-hidden="true">03</div>
-          <header class="pcard-hdr">
-            <div>
-              <h3 class="pcard-title">OT Bill Management System</h3>
-              <div class="pcard-url">otbill.vercel.app</div>
-            </div>
-            <span class="badge-live" aria-label="Live system">● LIVE</span>
-          </header>
-          <dl class="pcard-dl">
-            <dt>Problem</dt>
-            <dd>Overtime billing was manual Excel — complex, time-consuming and error-prone every billing cycle.</dd>
-            <dt>Solution</dt>
-            <dd>Any staff member adds profile once and generates final OT bill instantly. Employee database, auto hourly rate calculation, date-wise OT entry, A4 print output.</dd>
-          </dl>
-          <a class="pcard-link" href="https://otbill.vercel.app" target="_blank" rel="noopener">
-            Open Live App
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </article>
-
-        <article class="pcard reveal" data-delay="3">
-          <div class="pcard-num" aria-hidden="true">04</div>
-          <header class="pcard-hdr">
-            <div>
-              <h3 class="pcard-title">Linux/DevOps Command Reference</h3>
-              <div class="pcard-url">devops-command-summary.vercel.app</div>
-            </div>
-            <span class="badge-live" aria-label="Live system">● LIVE</span>
-          </header>
-          <dl class="pcard-dl">
-            <dt>About</dt>
-            <dd>1,311 command blocks, 84 sections — Linux, Docker, Kubernetes, Terraform, AWS, Azure, Security.</dd>
-            <dt>Purpose</dt>
-            <dd>Built during RHCSA preparation as personal study reference.</dd>
-          </dl>
-          <a class="pcard-link" href="https://devops-command-summary.vercel.app" target="_blank" rel="noopener">
-            Open Live App
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ TECHNICAL DEVELOPMENT ═══════════════════════════════ -->
-  <section id="technical" aria-labelledby="tech-h2">
-    <div class="container">
-      <header class="sh reveal">
-        <span class="lbl">◆ Technical Development</span>
-        <h2 id="tech-h2">Self-Directed Learning</h2>
-      </header>
-      <div class="td-grid">
-
-        <article class="td-card reveal" data-delay="0">
-          <div class="td-ico" aria-hidden="true">🐧</div>
-          <div class="td-body">
-            <h3 class="td-title">Linux Administration — RHCSA EX200 Preparation</h3>
-            <p class="td-meta">Self-Directed &nbsp;·&nbsp; Jan 2025 – Present</p>
-            <ul class="sk-list">
-              <li>RHCSA EX200 — RHEL 9 structured 60-day program (exam scheduled 2026)</li>
-              <li>Topics: systemd, SELinux, firewalld, LVM, NFS, SSH hardening, ACLs, Podman, Bash scripting</li>
-              <li>Completed: user/group management, file permissions, process management, basic storage and networking</li>
-              <li>AI-assisted development — Claude (prompt engineering), problem definition, requirement specification, testing and production deployment on Vercel</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="td-card reveal" data-delay="1">
-          <div class="td-ico" aria-hidden="true">🕌</div>
-          <div class="td-body">
-            <h3 class="td-title">Arabic Language — Saudi Workplace Readiness</h3>
-            <p class="td-meta">Self-Directed &nbsp;·&nbsp; 2025 – Present</p>
-            <ul class="sk-list">
-              <li>MSA and Saudi spoken Arabic — maritime and port operations terminology focus</li>
-              <li>Goal: conversational level for Saudi port workplace communication</li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ EDUCATION ════════════════════════════════════════════ -->
-  <section id="education" aria-labelledby="edu-h2">
-    <div class="container">
-      <header class="sh reveal">
-        <span class="lbl">◆ Education</span>
-        <h2 id="edu-h2">Academic Background</h2>
-      </header>
-
-      <div class="edu-grid reveal">
-        <article class="edu-card">
-          <div class="edu-yr">2009 – 2011</div>
-          <h3 class="edu-deg">Higher Secondary Certificate — Business Studies</h3>
-          <div class="edu-inst">Khulna Public College</div>
-        </article>
-        <article class="edu-card">
-          <div class="edu-yr">1999 – 2009</div>
-          <h3 class="edu-deg">Secondary School Certificate — Business Studies</h3>
-          <div class="edu-inst">Mongla Bandar Secondary School</div>
-        </article>
+    <!-- ═══ HERO ══════════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Introduction">
+      <!-- Background elements -->
+      <div class="h-bg" aria-hidden="true">
+        <div class="blob blob-a"></div>
+        <div class="blob blob-b"></div>
+        <div class="blob blob-c"></div>
+        <div class="h-grid"></div>
       </div>
 
-      <div class="lang-wrap reveal">
-        <h3 class="lang-lbl">Languages</h3>
-        <div class="lang-row">
-          <div class="lang-pill">
-            <span class="lang-flag" aria-hidden="true">🇧🇩</span>
-            <div class="lang-info">
-              <span class="lang-name">Bengali</span>
-              <span class="lang-lvl">Native</span>
-            </div>
-            <div class="lang-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Bengali proficiency">
-              <div class="lang-fill" style="width:100%"></div>
-            </div>
-          </div>
-          <div class="lang-pill">
-            <span class="lang-flag" aria-hidden="true">🇬🇧</span>
-            <div class="lang-info">
-              <span class="lang-name">English</span>
-              <span class="lang-lvl">Professional Working</span>
-            </div>
-            <div class="lang-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="English proficiency">
-              <div class="lang-fill" style="width:65%"></div>
-            </div>
-          </div>
-          <div class="lang-pill">
-            <span class="lang-flag" aria-hidden="true">🇸🇦</span>
-            <div class="lang-info">
-              <span class="lang-name">Arabic</span>
-              <span class="lang-lvl">Elementary — Learning</span>
-            </div>
-            <div class="lang-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Arabic proficiency">
-              <div class="lang-fill" style="width:20%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══ DOWNLOAD CV ══════════════════════════════════════════ -->
-  <div class="dl-band">
-    <div class="container">
-      <div class="dl-card reveal">
-        <div class="dl-left">
-          <div class="dl-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
+      <div class="h-wrap">
+        <div class="h-eyebrow">
+          <span class="h-tag">
+            <svg width="6" height="6" viewBox="0 0 6 6" aria-hidden="true">
+              <circle cx="3" cy="3" r="3" fill="currentColor" />
             </svg>
+            Available for Relocation — Saudi Arabia
+          </span>
+        </div>
+
+        <h1 class="h-name">
+          <span class="h-fn">MD Samiul</span>
+          <span class="h-ln">Alam Sumel</span>
+        </h1>
+
+        <p class="h-role">Port Digital Operations Specialist</p>
+        <p class="h-spec">
+          Port Billing &nbsp;·&nbsp; Cargo Operations &nbsp;·&nbsp; Process
+          Digitization &nbsp;·&nbsp; Saudi Maritime
+        </p>
+
+        <p class="h-type" aria-live="polite">
+          <span id="tw"></span><span class="blink" aria-hidden="true">|</span>
+        </p>
+
+        <div class="h-contact" aria-label="Contact details">
+          <span class="hc-item">
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 1a5 5 0 0 0-5 5c0 3.5 5 9 5 9s5-5.5 5-9a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
+              />
+            </svg>
+            Mongla, Bangladesh
+          </span>
+          <span class="hc-dot" aria-hidden="true"></span>
+          <a class="hc-item hc-link" href="mailto:sa.sumel91@gmail.com"
+            >sa.sumel91@gmail.com</a
+          >
+          <span class="hc-dot" aria-hidden="true"></span>
+          <a class="hc-item hc-link" href="tel:+8801312312512"
+            >+880&nbsp;1312&nbsp;312512</a
+          >
+          <span class="hc-dot" aria-hidden="true"></span>
+          <a
+            class="hc-item hc-link"
+            href="https://linkedin.com/in/samiul-alam-sumel"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+        </div>
+
+        <div class="h-stats" aria-label="Key career highlights">
+          <div class="hstat">
+            <div class="hstat-n">
+              <span class="cnt" data-to="12">0</span><sup>+</sup>
+            </div>
+            <div class="hstat-l">Years Port Ops</div>
           </div>
-          <div class="dl-info">
-            <h3>Samiul_Alam_Sumel_Final_CV.docx</h3>
-            <p>Full CV &nbsp;·&nbsp; Port Digital Operations Specialist &nbsp;·&nbsp; Updated 2026</p>
+          <div class="hstat-sep" aria-hidden="true"></div>
+          <div class="hstat">
+            <div class="hstat-n"><span class="cnt" data-to="3">0</span></div>
+            <div class="hstat-l">Live Apps Built</div>
+          </div>
+          <div class="hstat-sep" aria-hidden="true"></div>
+          <div class="hstat">
+            <div class="hstat-n">Q2</div>
+            <div class="hstat-l">2027 SA Target</div>
           </div>
         </div>
-        <a class="btn-dl" href="Samiul_Alam_Sumel_Final_CV.docx" download>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 1v9M4 7l4 4 4-4"/><path d="M2 13h12"/></svg>
-          Download CV
-        </a>
+
+        <div class="h-btns">
+          <a href="#projects" class="btn-p">View Live Projects</a>
+          <a href="Samiul_Alam_Sumel_Final_CV.docx" download class="btn-o">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M8 1v9M4 7l4 4 4-4" />
+              <path d="M2 13h12" />
+            </svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <div class="h-scroll" aria-hidden="true">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+        <span>scroll</span>
+      </div>
+    </section>
+
+    <!-- ═══ PROFESSIONAL SUMMARY ══════════════════════════════════ -->
+    <section id="summary" aria-labelledby="sum-h2">
+      <div class="container">
+        <header class="sh reveal">
+          <span class="lbl">◆ Professional Summary</span>
+          <h2 id="sum-h2">12+ Years at Mongla Port Authority</h2>
+        </header>
+        <div class="sum-body reveal">
+          <blockquote class="sum-quote">
+            12+ years at Mongla Port Authority — Bangladesh's second-largest
+            international seaport handling vehicle imports, bulk cargo and
+            general cargo. Deep expertise in wharfrent billing, cargo dwell time
+            management, terminal operations and CF agent coordination.
+            Independently identified real port workflow inefficiencies and
+            designed 3 live web applications using AI-assisted development —
+            problem definition, requirements and validation based on 12+ years
+            port domain expertise — now actively used by CF agents and port
+            staff.
+          </blockquote>
+          <div class="sum-target">
+            <span class="target-lbl">Target</span>
+            <span class="target-txt"
+              >Port Operations or Port IT Operations role in Saudi Arabia —
+              2027</span
+            >
+            <div class="target-cos">
+              <span>DP World</span><span>Mawani</span
+              ><span>King Abdullah Port</span><span>NEOM Logistics</span
+              ><span>Kanoo Shipping</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CORE COMPETENCIES ════════════════════════════════════ -->
+    <section id="competencies" aria-labelledby="comp-h2">
+      <div class="container">
+        <header class="sh reveal">
+          <span class="lbl">◆ Core Competencies</span>
+          <h2 id="comp-h2">Three Domains of Expertise</h2>
+        </header>
+        <div class="comp-grid">
+          <article class="comp-card reveal" data-delay="0">
+            <div class="comp-ico" aria-hidden="true">⚓</div>
+            <h3 class="comp-title">Port Operations</h3>
+            <ul class="sk-list" aria-label="Port Operations skills">
+              <li>Wharfrent Billing &amp; Slab Calculation</li>
+              <li>Cargo Dwell Time Management</li>
+              <li>CF Agent Coordination</li>
+              <li>Terminal Vehicle Tracking</li>
+              <li>Revenue Reporting</li>
+              <li>Port Automation System Usage</li>
+            </ul>
+          </article>
+
+          <article class="comp-card reveal" data-delay="1">
+            <div class="comp-ico" aria-hidden="true">📋</div>
+            <h3 class="comp-title">Cargo &amp; Documentation</h3>
+            <ul class="sk-list" aria-label="Cargo and Documentation skills">
+              <li>Customs Clearance Workflow</li>
+              <li>Maritime Documentation</li>
+              <li>Jetty Statistics &amp; Reports</li>
+              <li>Import/Delivery Records</li>
+              <li>Advance Billing Estimation</li>
+              <li>Multi-location Cargo Tracking</li>
+            </ul>
+          </article>
+
+          <article class="comp-card reveal" data-delay="2">
+            <div class="comp-ico" aria-hidden="true">💻</div>
+            <h3 class="comp-title">Digital &amp; Technical</h3>
+            <ul class="sk-list" aria-label="Digital and Technical skills">
+              <li>Process Digitization</li>
+              <li>Web Application Development (AI)</li>
+              <li>Firebase &amp; Cloud Deployment</li>
+              <li>Linux Admin (RHCSA Pursuing)</li>
+              <li>Data Analytics &amp; Dashboards</li>
+              <li>Arabic (Elementary — Learning)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ WORK EXPERIENCE ══════════════════════════════════════ -->
+    <section id="experience" aria-labelledby="exp-h2">
+      <div class="container">
+        <header class="sh reveal">
+          <span class="lbl">◆ Work Experience</span>
+          <h2 id="exp-h2">Uninterrupted Career at Mongla Port</h2>
+        </header>
+
+        <div class="tl">
+          <!-- Current role -->
+          <article class="tl-item tl-cur reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <div class="tl-hdr">
+                <time class="tl-date" datetime="2017-11"
+                  >Nov 2017 – Present</time
+                >
+                <span class="badge-live">● Current</span>
+              </div>
+              <h3 class="tl-role">
+                Senior Outdoor Assistant — Port Operations &amp; IT Systems
+              </h3>
+              <div class="tl-org">Mongla Port Authority</div>
+              <p class="tl-desc">
+                Bangladesh's second-largest international seaport handling
+                vehicle imports, bulk cargo and general cargo.
+              </p>
+
+              <p class="tl-sec-lbl">Core Port Operations</p>
+              <ul class="tl-ul">
+                <li>
+                  Managed full cargo dwell time &amp; wharfrent billing cycle —
+                  slab-wise charges, VAT and levy computation for CF agents
+                </li>
+                <li>
+                  Provided advance billing estimates to CF agents — reducing
+                  vehicle dwell time and terminal counter dependency
+                </li>
+                <li>
+                  Tracked cargo &amp; vehicle positions across warehouse, shed
+                  and yard locations simultaneously
+                </li>
+                <li>
+                  Maintained daily/monthly revenue reports, cumulative income
+                  statements &amp; vehicle balance records
+                </li>
+                <li>
+                  Generated car import/delivery &amp; jetty statistics reports
+                  for port authority management
+                </li>
+                <li>
+                  Coordinated CF agent documentation, billing queries &amp;
+                  advance payment planning
+                </li>
+                <li>
+                  Operated port automation billing system — managing full
+                  wharfrent computation workflow
+                </li>
+              </ul>
+
+              <p class="tl-sec-lbl">Self-Initiated Digital Work</p>
+              <ul class="tl-ul">
+                <li>
+                  Identified critical inefficiencies in manual paper-based
+                  billing and tracking workflows
+                </li>
+                <li>
+                  Designed and deployed 3 live web applications using
+                  AI-assisted development — domain expertise directed the AI,
+                  real CF agents and port staff use the systems daily
+                </li>
+                <li>
+                  <a
+                    href="https://portbill.vercel.app"
+                    target="_blank"
+                    rel="noopener"
+                    >portbill.vercel.app</a
+                  >
+                  — advance wharfrent calculator for C&amp;F agents, avoiding
+                  permanent system entries
+                </li>
+                <li>
+                  <a
+                    href="https://otbill.vercel.app"
+                    target="_blank"
+                    rel="noopener"
+                    >otbill.vercel.app</a
+                  >
+                  — OT billing web tool replacing manual Excel for all port
+                  staff
+                </li>
+                <li>
+                  <a
+                    href="https://monthly-car-balance.vercel.app"
+                    target="_blank"
+                    rel="noopener"
+                    >monthly-car-balance.vercel.app</a
+                  >
+                  — live vehicle tracking replacing personal Excel with cloud
+                  dashboard
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Previous role -->
+          <article class="tl-item reveal">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <div class="tl-hdr">
+                <time class="tl-date" datetime="2013-11"
+                  >Nov 2013 – Nov 2017</time
+                >
+              </div>
+              <h3 class="tl-role">
+                Junior Outdoor Assistant — Port &amp; Terminal Operations
+              </h3>
+              <div class="tl-org">Mongla Port Authority</div>
+              <p class="tl-desc">
+                Foundation of 12+ year uninterrupted career at Bangladesh's
+                second-largest international seaport.
+              </p>
+              <ul class="tl-ul">
+                <li>
+                  Assisted in port inspections, vessel operations and cargo
+                  handling under senior supervision
+                </li>
+                <li>
+                  Monitored cargo dwell time and vehicle positioning across
+                  terminal locations
+                </li>
+                <li>
+                  Maintained inspection reports, cargo handling records and
+                  incident logs
+                </li>
+                <li>
+                  Coordinated with CF agents for efficient cargo clearance
+                  workflows
+                </li>
+                <li>
+                  Built foundational expertise in wharfrent billing, maritime
+                  logistics and customs clearance
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ LIVE PORT SYSTEMS ════════════════════════════════════ -->
+    <section id="projects" aria-labelledby="proj-h2">
+      <div class="container">
+        <header class="sh reveal">
+          <span class="lbl">◆ Live Port Systems — Self-Built</span>
+          <h2 id="proj-h2">4 Production Systems in Active Use</h2>
+        </header>
+        <div class="proj-grid">
+          <article class="pcard reveal" data-delay="0">
+            <div class="pcard-num" aria-hidden="true">01</div>
+            <header class="pcard-hdr">
+              <div>
+                <h3 class="pcard-title">Port Billing Web Application</h3>
+                <div class="pcard-url">portbill.netlify.app</div>
+              </div>
+              <span class="badge-live" aria-label="Live system">● LIVE</span>
+            </header>
+            <dl class="pcard-dl">
+              <dt>Problem</dt>
+              <dd>
+                Mongla Port's official system creates permanent final bills that
+                cannot be deleted. C&amp;F agents had no way to estimate charges
+                without committing to a final entry.
+              </dd>
+              <dt>Solution</dt>
+              <dd>
+                Real-time advance wharfrent calculator for Car &amp; General
+                Cargo. Slab-based billing, VAT, levy, inside/outside cargo
+                split, hoisting charge auto-calculation, print-ready output.
+                Actively used by C&amp;F agents at Mongla Port.
+              </dd>
+            </dl>
+            <a
+              class="pcard-link"
+              href="https://portbill.vercel.app"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Live App
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="pcard reveal" data-delay="1">
+            <div class="pcard-num" aria-hidden="true">02</div>
+            <header class="pcard-hdr">
+              <div>
+                <h3 class="pcard-title">
+                  Daily Car Balance &amp; Location Tracking
+                </h3>
+                <div class="pcard-url">monthly-car-balance.netlify.app</div>
+              </div>
+              <span class="badge-live" aria-label="Live system">● LIVE</span>
+            </header>
+            <dl class="pcard-dl">
+              <dt>Problem</dt>
+              <dd>
+                Vehicle tracking across warehouse, shed and yard was in personal
+                Excel — only visible to one person.
+              </dd>
+              <dt>Solution</dt>
+              <dd>
+                Live cloud dashboard replacing personal Excel. All staff view
+                real-time vehicle positions across terminal areas. Firebase
+                sync, KPI analytics, monthly comparison reports, Excel export.
+              </dd>
+            </dl>
+            <a
+              class="pcard-link"
+              href="https://monthly-car-balance.vercel.app"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Live App
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="pcard reveal" data-delay="2">
+            <div class="pcard-num" aria-hidden="true">03</div>
+            <header class="pcard-hdr">
+              <div>
+                <h3 class="pcard-title">OT Bill Management System</h3>
+                <div class="pcard-url">otbill.netlify.app</div>
+              </div>
+              <span class="badge-live" aria-label="Live system">● LIVE</span>
+            </header>
+            <dl class="pcard-dl">
+              <dt>Problem</dt>
+              <dd>
+                Overtime billing was manual Excel — complex, time-consuming and
+                error-prone every billing cycle.
+              </dd>
+              <dt>Solution</dt>
+              <dd>
+                Any staff member adds profile once and generates final OT bill
+                instantly. Employee database, auto hourly rate calculation,
+                date-wise OT entry, A4 print output.
+              </dd>
+            </dl>
+            <a
+              class="pcard-link"
+              href="https://otbill.vercel.app"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Live App
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+          </article>
+
+          <article class="pcard reveal" data-delay="3">
+            <div class="pcard-num" aria-hidden="true">04</div>
+            <header class="pcard-hdr">
+              <div>
+                <h3 class="pcard-title">Linux/DevOps Command Reference</h3>
+                <div class="pcard-url">devops-command-summary.netlify.app</div>
+              </div>
+              <span class="badge-live" aria-label="Live system">● LIVE</span>
+            </header>
+            <dl class="pcard-dl">
+              <dt>About</dt>
+              <dd>
+                1,311 command blocks, 84 sections — Linux, Docker, Kubernetes,
+                Terraform, AWS, Azure, Security.
+              </dd>
+              <dt>Purpose</dt>
+              <dd>
+                Built during RHCSA preparation as personal study reference.
+              </dd>
+            </dl>
+            <a
+              class="pcard-link"
+              href="https://devops-command-summary.vercel.app"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Live App
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TECHNICAL DEVELOPMENT ═══════════════════════════════ -->
+    <section id="technical" aria-labelledby="tech-h2">
+      <div class="container">
+        <header class="sh reveal">
+          <span class="lbl">◆ Technical Development</span>
+          <h2 id="tech-h2">Self-Directed Learning</h2>
+        </header>
+        <div class="td-grid">
+          <article class="td-card reveal" data-delay="0">
+            <div class="td-ico" aria-hidden="true">🐧</div>
+            <div class="td-body">
+              <h3 class="td-title">
+                Linux Administration — RHCSA EX200 Preparation
+              </h3>
+              <p class="td-meta">
+                Self-Directed &nbsp;·&nbsp; Jan 2025 – Present
+              </p>
+              <ul class="sk-list">
+                <li>
+                  RHCSA EX200 — RHEL 9 structured 60-day program (exam scheduled
+                  2026)
+                </li>
+                <li>
+                  Topics: systemd, SELinux, firewalld, LVM, NFS, SSH hardening,
+                  ACLs, Podman, Bash scripting
+                </li>
+                <li>
+                  Completed: user/group management, file permissions, process
+                  management, basic storage and networking
+                </li>
+                <li>
+                  AI-assisted development — Claude (prompt engineering), problem
+                  definition, requirement specification, testing and production
+                  deployment on Vercel
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="td-card reveal" data-delay="1">
+            <div class="td-ico" aria-hidden="true">🕌</div>
+            <div class="td-body">
+              <h3 class="td-title">
+                Arabic Language — Saudi Workplace Readiness
+              </h3>
+              <p class="td-meta">Self-Directed &nbsp;·&nbsp; 2025 – Present</p>
+              <ul class="sk-list">
+                <li>
+                  MSA and Saudi spoken Arabic — maritime and port operations
+                  terminology focus
+                </li>
+                <li>
+                  Goal: conversational level for Saudi port workplace
+                  communication
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ EDUCATION ════════════════════════════════════════════ -->
+    <section id="education" aria-labelledby="edu-h2">
+      <div class="container">
+        <header class="sh reveal">
+          <span class="lbl">◆ Education</span>
+          <h2 id="edu-h2">Academic Background</h2>
+        </header>
+
+        <div class="edu-grid reveal">
+          <article class="edu-card">
+            <div class="edu-yr">2009 – 2011</div>
+            <h3 class="edu-deg">
+              Higher Secondary Certificate — Business Studies
+            </h3>
+            <div class="edu-inst">Khulna Public College</div>
+          </article>
+          <article class="edu-card">
+            <div class="edu-yr">1999 – 2009</div>
+            <h3 class="edu-deg">
+              Secondary School Certificate — Business Studies
+            </h3>
+            <div class="edu-inst">Mongla Bandar Secondary School</div>
+          </article>
+        </div>
+
+        <div class="lang-wrap reveal">
+          <h3 class="lang-lbl">Languages</h3>
+          <div class="lang-row">
+            <div class="lang-pill">
+              <span class="lang-flag" aria-hidden="true">🇧🇩</span>
+              <div class="lang-info">
+                <span class="lang-name">Bengali</span>
+                <span class="lang-lvl">Native</span>
+              </div>
+              <div
+                class="lang-bar"
+                role="progressbar"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-label="Bengali proficiency"
+              >
+                <div class="lang-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="lang-pill">
+              <span class="lang-flag" aria-hidden="true">🇬🇧</span>
+              <div class="lang-info">
+                <span class="lang-name">English</span>
+                <span class="lang-lvl">Professional Working</span>
+              </div>
+              <div
+                class="lang-bar"
+                role="progressbar"
+                aria-valuenow="65"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-label="English proficiency"
+              >
+                <div class="lang-fill" style="width: 65%"></div>
+              </div>
+            </div>
+            <div class="lang-pill">
+              <span class="lang-flag" aria-hidden="true">🇸🇦</span>
+              <div class="lang-info">
+                <span class="lang-name">Arabic</span>
+                <span class="lang-lvl">Elementary — Learning</span>
+              </div>
+              <div
+                class="lang-bar"
+                role="progressbar"
+                aria-valuenow="20"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-label="Arabic proficiency"
+              >
+                <div class="lang-fill" style="width: 20%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ DOWNLOAD CV ══════════════════════════════════════════ -->
+    <div class="dl-band">
+      <div class="container">
+        <div class="dl-card reveal">
+          <div class="dl-left">
+            <div class="dl-icon" aria-hidden="true">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+            <div class="dl-info">
+              <h3>Samiul_Alam_Sumel_Final_CV.docx</h3>
+              <p>
+                Full CV &nbsp;·&nbsp; Port Digital Operations Specialist
+                &nbsp;·&nbsp; Updated 2026
+              </p>
+            </div>
+          </div>
+          <a class="btn-dl" href="Samiul_Alam_Sumel_Final_CV.docx" download>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M8 1v9M4 7l4 4 4-4" />
+              <path d="M2 13h12" />
+            </svg>
+            Download CV
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ═══ CONTACT ══════════════════════════════════════════════ -->
-  <section id="contact" aria-labelledby="ct-h2">
-    <div class="container">
-      <div class="ct-wrap reveal">
+    <!-- ═══ CONTACT ══════════════════════════════════════════════ -->
+    <section id="contact" aria-labelledby="ct-h2">
+      <div class="container">
+        <div class="ct-wrap reveal">
+          <div class="ct-left">
+            <span class="lbl">◆ Contact</span>
+            <h2 id="ct-h2">
+              Available for<br />Relocation to<br />Saudi Arabia
+            </h2>
+            <p>
+              Open to Port Operations or Port IT Operations roles. 12+ years
+              domain expertise — immediately operational from day one.
+            </p>
+            <div class="avail-pill">
+              <span class="avail-dot" aria-hidden="true"></span>
+              Available for immediate relocation to Saudi Arabia &nbsp;·&nbsp;
+              Target: Q2 2027
+            </div>
+          </div>
 
-        <div class="ct-left">
-          <span class="lbl">◆ Contact</span>
-          <h2 id="ct-h2">Available for<br>Relocation to<br>Saudi Arabia</h2>
-          <p>Open to Port Operations or Port IT Operations roles. 12+ years domain expertise — immediately operational from day one.</p>
-          <div class="avail-pill">
-            <span class="avail-dot" aria-hidden="true"></span>
-            Available for immediate relocation to Saudi Arabia &nbsp;·&nbsp; Target: Q2 2027
+          <div class="ct-links" aria-label="Contact links">
+            <a class="clink" href="mailto:sa.sumel91@gmail.com">
+              <span class="clink-ico" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </span>
+              <div class="clink-info">
+                <span class="clink-lbl">Email</span>
+                <span class="clink-val">sa.sumel91@gmail.com</span>
+              </div>
+              <svg
+                class="clink-arr"
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+
+            <a class="clink" href="tel:+8801312312512">
+              <span class="clink-ico" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 9.81 19.79 19.79 0 0 1 1 1.18 2 2 0 0 1 2.96 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"
+                  />
+                </svg>
+              </span>
+              <div class="clink-info">
+                <span class="clink-lbl">Phone</span>
+                <span class="clink-val">+880&nbsp;1312&nbsp;312512</span>
+              </div>
+              <svg
+                class="clink-arr"
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+
+            <a
+              class="clink"
+              href="https://linkedin.com/in/samiul-alam-sumel"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="clink-ico" aria-hidden="true">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </span>
+              <div class="clink-info">
+                <span class="clink-lbl">LinkedIn</span>
+                <span class="clink-val">linkedin.com/in/samiul-alam-sumel</span>
+              </div>
+              <svg
+                class="clink-arr"
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
           </div>
         </div>
-
-        <div class="ct-links" aria-label="Contact links">
-          <a class="clink" href="mailto:sa.sumel91@gmail.com">
-            <span class="clink-ico" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </span>
-            <div class="clink-info">
-              <span class="clink-lbl">Email</span>
-              <span class="clink-val">sa.sumel91@gmail.com</span>
-            </div>
-            <svg class="clink-arr" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-
-          <a class="clink" href="tel:+8801312312512">
-            <span class="clink-ico" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 9.81 19.79 19.79 0 0 1 1 1.18 2 2 0 0 1 2.96 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"/></svg>
-            </span>
-            <div class="clink-info">
-              <span class="clink-lbl">Phone</span>
-              <span class="clink-val">+880&nbsp;1312&nbsp;312512</span>
-            </div>
-            <svg class="clink-arr" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-
-          <a class="clink" href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener">
-            <span class="clink-ico" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </span>
-            <div class="clink-info">
-              <span class="clink-lbl">LinkedIn</span>
-              <span class="clink-val">linkedin.com/in/samiul-alam-sumel</span>
-            </div>
-            <svg class="clink-arr" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
-  <footer>
-    <div class="container">
-      <div class="ft">
-        <div class="ft-brand">samiul<em>.dev</em></div>
-        <div class="ft-copy">© <span id="ft-yr"></span> MD Samiul Alam Sumel &nbsp;·&nbsp; Mongla, Bangladesh</div>
-        <div class="ft-links">
-          <a href="mailto:sa.sumel91@gmail.com">Email</a>
-          <a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener">LinkedIn</a>
+    <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+    <footer>
+      <div class="container">
+        <div class="ft">
+          <div class="ft-brand">samiul<em>.dev</em></div>
+          <div class="ft-copy">
+            © <span id="ft-yr"></span> MD Samiul Alam Sumel &nbsp;·&nbsp;
+            Mongla, Bangladesh
+          </div>
+          <div class="ft-links">
+            <a href="mailto:sa.sumel91@gmail.com">Email</a>
+            <a
+              href="https://linkedin.com/in/samiul-alam-sumel"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Back to top -->
-  <button type="button" id="totop" aria-label="Scroll back to top">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
+    <!-- Back to top -->
+    <button type="button" id="totop" aria-label="Scroll back to top">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
 
-  <script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
