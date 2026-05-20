@@ -39,7 +39,7 @@ const lines = [
   'Port Digital Operations Specialist',
   '12+ Years at Mongla Port Authority',
   'Wharfrent Billing · Cargo Dwell Time · CF Coordination',
-  '3 Live Port Systems in Daily Active Use',
+  '3 Live Port Apps · 2 Linux Infra Projects',
   'Targeting Saudi Arabia — Q2 2027',
 ];
 

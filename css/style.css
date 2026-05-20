@@ -628,7 +628,7 @@ nav.scrolled {
    ═══════════════════════════════════════════════════════════════ */
 section { padding: 100px 0; position: relative; }
 #summary, #projects, #education { background: var(--bg2); }
-#competencies, #technical { background: var(--bg); }
+#competencies, #linux-projects, #technical { background: var(--bg); }
 #experience { background: var(--bg3); }
 #contact { background: var(--bg); border-top: 1px solid var(--bd); }
 

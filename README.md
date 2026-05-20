@@ -3,7 +3,7 @@
 **Owner:** MD Samiul Alam Sumel  
 **Role:** Port Digital Operations Specialist  
 **Target:** Port Operations / Port IT Operations — Saudi Arabia, Q2 2027  
-**CV source of truth:** `Samiul_Alam_Sumel_Final_CV.docx`
+**CV source of truth:** `Samiul_Alam_Sumel_CV_Final.docx`
 
 ---
 
@@ -11,7 +11,7 @@
 
 When the user says **"update my portfolio"** or **"update the website"**:
 
-1. **Extract the full CV** — run the Python extractor below against `Samiul_Alam_Sumel_Final_CV.docx`
+1. **Extract the full CV** — run the Python extractor below against `Samiul_Alam_Sumel_CV_Final.docx`
 2. **Diff against the CV snapshot** in this README (Section: Current CV Content)
 3. **Find only what changed** — do not touch anything that didn't change
 4. **Apply changes to `index.html`** using the Section Map below
@@ -36,7 +36,7 @@ def extract_docx(path):
             paragraphs.append(text)
     return paragraphs
 
-lines = extract_docx('Samiul_Alam_Sumel_Final_CV.docx')
+lines = extract_docx('Samiul_Alam_Sumel_CV_Final.docx')
 for i, l in enumerate(lines):
     print(f'{i+1:03d} | {l}')
 ```
@@ -53,8 +53,7 @@ samiulAsumel.cv/
 ├── js/
 │   └── main.js                       ← All interactivity (~267 lines)
 ├── favicon.svg                       ← Cargo ship SVG icon (amber + dark navy)
-├── Samiul_Alam_Sumel_Final_CV.docx   ← SOURCE OF TRUTH for all content
-├── project_list_final.md             ← Future DevOps roadmap (NOT on website)
+├── Samiul_Alam_Sumel_CV_Final.docx   ← SOURCE OF TRUTH for all content
 └── README.md                         ← This file (update memory)
 ```
 
@@ -70,41 +69,45 @@ This is the exact mapping between every CV line and its location in `index.html`
 |---|---|---|
 | 001 | MD SAMIUL ALAM SUMEL | `<h1 class="h-name">` → `.h-fn` + `.h-ln` |
 | 002 | Port Digital Operations Specialist | `<p class="h-role">` (hero) + `<meta name="description">` + JSON-LD |
-| 003 | Port Billing · Cargo Operations · Process Digitization · Saudi Maritime | `<p class="h-spec">` (hero) |
+| 003 | Port Billing · Cargo Ops · Process Digitization · Linux Admin · Saudi Maritime | `<p class="h-spec">` (hero) |
 | 004 | Mongla, Bangladesh | `.hc-item` (hero contact row) + footer `.ft-copy` + JSON-LD |
 | 005 | +8801312312512 | `<a class="hc-link" href="tel:+8801312312512">` (hero) + contact `.clink` |
 | 006 | sa.sumel91@gmail.com | `<a class="hc-link" href="mailto:...">` (hero) + contact `.clink` + footer + `nav-cta` |
 | 007 | linkedin.com/in/samiul-alam-sumel | `<a class="hc-link">` (hero) + contact `.clink` + footer + JSON-LD |
-| 008 | PROFESSIONAL SUMMARY heading | `<span class="lbl">` + `<h2>` in `#summary` |
-| 009 | Summary paragraph | `<blockquote class="sum-quote">` |
-| 010 | Target: Saudi Arabia — 2027 + companies | `.sum-target` → `.target-lbl` + `.target-txt` + `.target-cos span` × 5 |
-| 011 | CORE COMPETENCIES heading | `<span class="lbl">` + `<h2>` in `#competencies` |
-| 012–018 | PORT OPERATIONS (6 items) | First `.comp-card` → `<ul class="sk-list">` |
-| 019–025 | CARGO & DOCUMENTATION (6 items) | Second `.comp-card` → `<ul class="sk-list">` |
-| 026–032 | DIGITAL & TECHNICAL (6 items) | Third `.comp-card` → `<ul class="sk-list">` |
-| 033 | WORK EXPERIENCE heading | `<span class="lbl">` + `<h2>` in `#experience` |
-| 034 | Senior OA — Nov 2017–Present | `.tl-cur` → `.tl-date`, `.tl-role`, `.tl-org`, `.badge-live` |
-| 035 | Port description | `<p class="tl-desc">` in first `.tl-item` |
-| 036 | Core Port Operations: label | `<p class="tl-sec-lbl">` |
-| 037–043 | 7 Core Port Operations bullets | `<ul class="tl-ul">` (first group) |
-| 044 | Self-Initiated Digital Work: label | `<p class="tl-sec-lbl">` |
-| 045–049 | 5 Digital Work bullets (with 3 URLs) | `<ul class="tl-ul">` (second group) |
-| 050 | Junior OA — Nov 2013–Nov 2017 | Second `.tl-item` → `.tl-date`, `.tl-role`, `.tl-org` |
-| 051 | Foundation description | `<p class="tl-desc">` in second `.tl-item` |
-| 052–056 | 5 Junior role bullets | `<ul class="tl-ul">` in second `.tl-item` |
-| 057 | LIVE PORT SYSTEMS heading | `<span class="lbl">` + `<h2>` in `#projects` |
-| 058–060 | Project 01 — portbill.vercel.app | First `.pcard` → `.pcard-title`, `.pcard-url`, `.pcard-dl` |
-| 061–063 | Project 02 — monthly-car-balance | Second `.pcard` |
-| 064–066 | Project 03 — otbill.vercel.app | Third `.pcard` |
-| 067–068 | Project 04 — devops-command-summary | Fourth `.pcard` |
-| 069 | TECHNICAL DEVELOPMENT heading | `<span class="lbl">` + `<h2>` in `#technical` |
-| 070–074 | Linux Admin — RHCSA (4 bullets) | First `.td-card` → `.td-title`, `.td-meta`, `.sk-list` |
-| 075–077 | Arabic Language (2 bullets) | Second `.td-card` |
-| 078 | EDUCATION heading | `<span class="lbl">` + `<h2>` in `#education` |
-| 079 | HSC — Khulna Public College, 2009–2011 | First `.edu-card` → `.edu-yr`, `.edu-deg`, `.edu-inst` |
-| 080 | SSC — Mongla Bandar Secondary School, 1999–2009 | Second `.edu-card` |
-| 081–084 | Bengali/English/Arabic + levels | `.lang-row` → three `.lang-pill` with `.lang-fill` widths |
-| 085 | Available for immediate relocation + Q2 2027 | `.avail-pill` in `#contact` |
+| 008 | sasumel.netlify.app | `<a class="hc-link">` (hero) + contact `.clink` + footer + `canonical` + `og:url` |
+| 009 | PROFESSIONAL SUMMARY heading | `<span class="lbl">` + `<h2>` in `#summary` |
+| 010 | Summary paragraph | `<blockquote class="sum-quote">` |
+| 011 | Target: Saudi Arabia — 2027 + companies | `.sum-target` → `.target-lbl` + `.target-txt` + `.target-cos span` × 5 |
+| 012 | CORE COMPETENCIES heading | `<span class="lbl">` + `<h2>` in `#competencies` |
+| 013–019 | PORT OPERATIONS (6 items) | First `.comp-card` → `<ul class="sk-list">` |
+| 020–026 | CARGO & DOCUMENTATION (6 items) | Second `.comp-card` → `<ul class="sk-list">` |
+| 027–033 | TECHNICAL & DIGITAL (6 items) | Third `.comp-card` → `<ul class="sk-list">` |
+| 034 | WORK EXPERIENCE heading | `<span class="lbl">` + `<h2>` in `#experience` |
+| 035 | Senior OA — Nov 2017–Present | `.tl-cur` → `.tl-date`, `.tl-role`, `.tl-org`, `.badge-live` |
+| 036 | Port description | `<p class="tl-desc">` in first `.tl-item` |
+| 037 | Core Port Operations: label | `<p class="tl-sec-lbl">` |
+| 038–044 | 7 Core Port Operations bullets | `<ul class="tl-ul">` (first group) |
+| 045 | Self-Initiated Digital & Technical Work: label | `<p class="tl-sec-lbl">` |
+| 046–053 | 8 Digital & Technical Work bullets (5 URLs) | `<ul class="tl-ul">` (second group) |
+| 054 | Junior OA — Nov 2013–Nov 2017 | Second `.tl-item` → `.tl-date`, `.tl-role`, `.tl-org` |
+| 055 | Foundation description | `<p class="tl-desc">` in second `.tl-item` |
+| 056–060 | 5 Junior role bullets | `<ul class="tl-ul">` in second `.tl-item` |
+| 061 | LIVE PORT SYSTEMS — SELF-BUILT (AI-ASSISTED DEVELOPMENT) | `<span class="lbl">` + `<h2>` in `#projects` |
+| 062–064 | Project 01 — portbill.vercel.app | First `.pcard` → `.pcard-title`, `.pcard-url`, `.pcard-dl` |
+| 065–067 | Project 02 — monthly-car-balance | Second `.pcard` |
+| 068–070 | Project 03 — otbill.vercel.app | Third `.pcard` |
+| 071 | LINUX & TECHNICAL PROJECTS — RHCSA ALIGNED | `<span class="lbl">` + `<h2>` in `#linux-projects` |
+| 072–080 | Smart Port Billing Infrastructure (7 bullets) | First `.pcard` in `#linux-projects` |
+| 081–088 | Bash Automation Toolkit (6 bullets) | Second `.pcard` in `#linux-projects` |
+| 089–090 | Linux/DevOps Command Reference | Third `.pcard` in `#linux-projects` |
+| 091 | TECHNICAL DEVELOPMENT heading | `<span class="lbl">` + `<h2>` in `#technical` |
+| 092–097 | Linux Admin — RHCSA (5 bullets) | First `.td-card` → `.td-title`, `.td-meta`, `.sk-list` |
+| 098–100 | Arabic Language (2 bullets) | Second `.td-card` |
+| 101 | EDUCATION heading | `<span class="lbl">` + `<h2>` in `#education` |
+| 102 | HSC — Khulna Public College, 2009–2011 | First `.edu-card` → `.edu-yr`, `.edu-deg`, `.edu-inst` |
+| 103 | SSC — Mongla Bandar Secondary School, 1999–2009 | Second `.edu-card` |
+| 104–107 | Bengali/English/Arabic + levels | `.lang-row` → three `.lang-pill` with `.lang-fill` widths |
+| 108 | Portfolio + GitHub + Available for Saudi Arabia — Q2 2027 | contact `.clink` × 3 extra + footer links + `.avail-pill` |
 
 ### Language Bar Widths (from CV)
 | Language | Level | Bar width |
@@ -320,14 +323,14 @@ These rules were set by the owner and must be followed in every future update:
 |---|---|
 | `<title>` | MD Samiul Alam Sumel — Port Digital Operations Specialist |
 | `meta description` | Port Digital Operations Specialist — 12+ years Mongla Port Authority... |
-| `og:url` | https://samiul.dev |
+| `og:url` | https://sasumel.netlify.app |
 | `og:title` | MD Samiul Alam Sumel — Port Digital Operations Specialist |
 | `og:description` | 12+ years at Mongla Port Authority. 3 live web apps in daily port use. Targeting Saudi Arabia Q2 2027. |
 | `twitter:card` | summary |
 | `theme-color` | #030c1a |
-| `canonical` | https://samiul.dev |
+| `canonical` | https://sasumel.netlify.app |
 | JSON-LD type | Person |
-| JSON-LD sameAs | linkedin.com/in/samiul-alam-sumel |
+| JSON-LD sameAs | linkedin.com/in/samiul-alam-sumel, github.com/samiulAsumel |
 
 **Update meta when:** job title changes, target year changes, number of apps changes.
 
@@ -339,96 +342,119 @@ These rules were set by the owner and must be followed in every future update:
 ```
 001 | MD SAMIUL ALAM SUMEL
 002 | Port Digital Operations Specialist
-003 | Port Billing · Cargo Operations · Process Digitization · Saudi Maritime
+003 | Port Billing · Cargo Ops · Process Digitization · Linux Admin · Saudi Maritime
 004 | Mongla, Bangladesh
 005 | +8801312312512
 006 | sa.sumel91@gmail.com
 007 | linkedin.com/in/samiul-alam-sumel
-008 | PROFESSIONAL SUMMARY
-009 | 12+ years at Mongla Port Authority — Bangladesh's second-largest international
-      seaport handling vehicle imports, bulk cargo and general cargo. Deep expertise
-      in wharfrent billing, cargo dwell time management, terminal operations and CF
-      agent coordination. Independently identified real port workflow inefficiencies
-      and designed 3 live web applications using AI-assisted development — problem
-      definition, requirements and validation based on 12+ years port domain
-      expertise — now actively used by CF agents and port staff.
-010 | Target: Port Operations or Port IT Operations role in Saudi Arabia — 2027 |
+008 | sasumel.netlify.app
+009 | PROFESSIONAL SUMMARY
+010 | 12+ years at Mongla Port Authority — Bangladesh's second-largest international seaport.
+      Deep expertise in wharfrent billing, cargo dwell time management, terminal operations
+      and CF agent coordination. Independently identified real port workflow inefficiencies
+      and designed 3 live web applications using AI-assisted development — problem definition,
+      requirements and validation based on 12+ years port domain expertise — now actively used
+      by CF agents and port staff. Additionally built production-grade Linux infrastructure
+      and Bash automation projects aligned with RHCSA EX200 exam objectives.
+011 | Target: Port Operations or Port IT Operations role in Saudi Arabia — 2027 |
       DP World · Mawani · King Abdullah Port · NEOM Logistics · Kanoo Shipping
-011 | CORE COMPETENCIES
-012 | PORT OPERATIONS
-013 | Wharfrent Billing & Slab Calculation
-014 | Cargo Dwell Time Management
-015 | CF Agent Coordination
-016 | Terminal Vehicle Tracking
-017 | Revenue Reporting
-018 | Port Automation System Usage
-019 | CARGO & DOCUMENTATION
-020 | Customs Clearance Workflow
-021 | Maritime Documentation
-022 | Jetty Statistics & Reports
-023 | Import/Delivery Records
-024 | Advance Billing Estimation
-025 | Multi-location Cargo Tracking
-026 | DIGITAL & TECHNICAL
-027 | Process Digitization
-028 | Web Application Development (AI)
-029 | Firebase & Cloud Deployment
-030 | Linux Admin (RHCSA Pursuing)
-031 | Data Analytics & Dashboards
-032 | Arabic (Elementary — Learning)
-033 | WORK EXPERIENCE
-034 | Senior Outdoor Assistant — Port Operations & IT Systems | Mongla Port Authority Nov 2017 – Present
-035 | Mongla Port Authority — Bangladesh's second-largest international seaport handling vehicle imports, bulk cargo and general cargo.
-036 | Core Port Operations:
-037 | Managed full cargo dwell time & wharfrent billing cycle — slab-wise charges, VAT and levy computation for CF agents
-038 | Provided advance billing estimates to CF agents — reducing vehicle dwell time and terminal counter dependency
-039 | Tracked cargo & vehicle positions across warehouse, shed and yard locations simultaneously
-040 | Maintained daily/monthly revenue reports, cumulative income statements & vehicle balance records
-041 | Generated car import/delivery & jetty statistics reports for port authority management
-042 | Coordinated CF agent documentation, billing queries & advance payment planning
-043 | Operated port automation billing system — managing full wharfrent computation workflow
-044 | Self-Initiated Digital Work:
-045 | Identified critical inefficiencies in manual paper-based billing and tracking workflows
-046 | Designed and deployed 3 live web applications using AI-assisted development — domain expertise directed the AI, real CF agents and port staff use the systems daily
-047 | portbill.vercel.app — advance wharfrent calculator for C&F agents, avoiding permanent system entries
-048 | otbill.vercel.app — OT billing web tool replacing manual Excel for all port staff
-049 | monthly-car-balance.vercel.app — live vehicle tracking replacing personal Excel with cloud dashboard
-050 | Junior Outdoor Assistant — Port & Terminal Operations | Mongla Port Authority Nov 2013 – Nov 2017
-051 | Foundation of 12+ year uninterrupted career at Bangladesh's second-largest international seaport.
-052 | Assisted in port inspections, vessel operations and cargo handling under senior supervision
-053 | Monitored cargo dwell time and vehicle positioning across terminal locations
-054 | Maintained inspection reports, cargo handling records and incident logs
-055 | Coordinated with CF agents for efficient cargo clearance workflows
-056 | Built foundational expertise in wharfrent billing, maritime logistics and customs clearance
-057 | LIVE PORT SYSTEMS — SELF-BUILT
-058 | Port Billing Web Application | portbill.vercel.app
-059 | Problem: Mongla Port's official system creates permanent final bills that cannot be deleted. C&F agents had no way to estimate charges without committing to a final entry.
-060 | Solution: Real-time advance wharfrent calculator for Car & General Cargo. Slab-based billing, VAT, levy, inside/outside cargo split, hoisting charge auto-calculation, print-ready output. Actively used by C&F agents at Mongla Port.
-061 | Daily Car Balance & Location Tracking System | monthly-car-balance.vercel.app
-062 | Problem: Vehicle tracking across warehouse, shed and yard was in personal Excel — only visible to one person.
-063 | Solution: Live cloud dashboard replacing personal Excel. All staff view real-time vehicle positions across terminal areas. Firebase sync, KPI analytics, monthly comparison reports, Excel export.
-064 | OT Bill Management System | otbill.vercel.app
-065 | Problem: Overtime billing was manual Excel — complex, time-consuming and error-prone every billing cycle.
-066 | Solution: Any staff member adds profile once and generates final OT bill instantly. Employee database, auto hourly rate calculation, date-wise OT entry, A4 print output.
-067 | Linux/DevOps Command Reference | devops-command-summary.vercel.app
-068 | 1,311 command blocks, 84 sections — Linux, Docker, Kubernetes, Terraform, AWS, Azure, Security. Built during RHCSA preparation as personal study reference.
-069 | TECHNICAL DEVELOPMENT
-070 | Linux Administration — RHCSA EX200 Preparation | Self-Directed Jan 2025 – Present
-071 | RHCSA EX200 — RHEL 9 structured 60-day program (exam scheduled 2026)
-072 | Topics: systemd, SELinux, firewalld, LVM, NFS, SSH hardening, ACLs, Podman, Bash scripting
-073 | Completed: user/group management, file permissions, process management, basic storage and networking
-074 | AI-assisted development — Claude (prompt engineering), problem definition, requirement specification, testing and production deployment on Vercel
-075 | Arabic Language — Saudi Workplace Readiness | Self-Directed 2025 – Present
-076 | MSA and Saudi spoken Arabic — maritime and port operations terminology focus
-077 | Goal: conversational level for Saudi port workplace communication
-078 | EDUCATION
-079 | Higher Secondary Certificate — Business Studies | Khulna Public College 2009 – 2011
-080 | Secondary School Certificate — Business Studies | Mongla Bandar Secondary School 1999 – 2009
-081 | LANGUAGES
-082 | Bengali — Native
-083 | English — Professional Working
-084 | Arabic — Elementary (Learning)
-085 | Available for immediate relocation to Saudi Arabia | Target: Q2 2027
+012 | CORE COMPETENCIES
+013 | PORT OPERATIONS
+014 | Wharfrent Billing & Slab Calculation
+015 | Cargo Dwell Time Management
+016 | CF Agent Coordination
+017 | Terminal Vehicle Tracking
+018 | Revenue Reporting
+019 | Port Automation System Usage
+020 | CARGO & DOCUMENTATION
+021 | Customs Clearance Workflow
+022 | Maritime Documentation
+023 | Jetty Statistics & Reports
+024 | Import/Delivery Records
+025 | Advance Billing Estimation
+026 | Multi-location Cargo Tracking
+027 | TECHNICAL & DIGITAL
+028 | Linux Admin — RHCSA (Pursuing)
+029 | Bash Scripting & Automation
+030 | SELinux · firewalld · LVM · SSH
+031 | Podman Container Deployment
+032 | Web App Development (AI-Assisted)
+033 | Firebase · Cloud · Vercel Deploy
+034 | WORK EXPERIENCE
+035 | Senior Outdoor Assistant — Port Operations & IT Systems | Mongla Port Authority Nov 2017 – Present
+036 | Mongla Port Authority — Bangladesh's second-largest international seaport handling vehicle imports, bulk cargo and general cargo.
+037 | Core Port Operations:
+038 | Managed full cargo dwell time & wharfrent billing cycle — slab-wise charges, VAT and levy computation for CF agents
+039 | Provided advance billing estimates to CF agents — reducing vehicle dwell time and terminal counter dependency
+040 | Tracked cargo & vehicle positions across warehouse, shed and yard locations simultaneously
+041 | Maintained daily/monthly revenue reports, cumulative income statements & vehicle balance records
+042 | Generated car import/delivery & jetty statistics reports for port authority management
+043 | Coordinated CF agent documentation, billing queries & advance payment planning
+044 | Operated port automation billing system — managing full wharfrent computation workflow
+045 | Self-Initiated Digital & Technical Work:
+046 | Identified critical inefficiencies in manual paper-based billing and tracking workflows
+047 | Designed and deployed 3 live port web applications using AI-assisted development — actively used by CF agents daily
+048 | Built 2 production-grade Linux infrastructure projects aligned with RHCSA EX200 exam objectives
+049 | portbill.vercel.app — advance wharfrent calculator for C&F agents, avoiding permanent system entries
+050 | otbill.vercel.app — OT billing web tool replacing manual Excel for all port staff
+051 | monthly-car-balance.vercel.app — live vehicle tracking replacing personal Excel with cloud dashboard
+052 | smart-port-billing-infra — RHEL 9 enterprise deployment: 7 hardened scripts, LVM, SELinux, Podman
+053 | bash-automation-toolkit — 5 production Bash scripts: user provisioning, backup, monitoring, watchdog
+054 | Junior Outdoor Assistant — Port & Terminal Operations | Mongla Port Authority Nov 2013 – Nov 2017
+055 | Foundation of 12+ year uninterrupted career at Bangladesh's second-largest international seaport.
+056 | Assisted in port inspections, vessel operations and cargo handling under senior supervision
+057 | Monitored cargo dwell time and vehicle positioning across terminal locations
+058 | Maintained inspection reports, cargo handling records and incident logs
+059 | Coordinated with CF agents for efficient cargo clearance workflows
+060 | Built foundational expertise in wharfrent billing, maritime logistics and customs clearance
+061 | LIVE PORT SYSTEMS — SELF-BUILT (AI-ASSISTED DEVELOPMENT)
+062 | Port Billing Web Application | portbill.vercel.app
+063 | Problem: Port official system creates permanent bills that cannot be deleted — C&F agents had no way to estimate charges without committing to a final entry.
+064 | Solution: Real-time advance wharfrent calculator for Car & General Cargo. Slab-based billing, VAT, levy, inside/outside cargo split, hoisting charge auto-calculation, print-ready output. Actively used by C&F agents at Mongla Port.
+065 | Daily Car Balance & Location Tracking System | monthly-car-balance.vercel.app
+066 | Problem: Vehicle tracking across warehouse, shed and yard was in personal Excel — only visible to one person.
+067 | Solution: Live cloud dashboard replacing personal Excel. All staff view real-time vehicle positions across all terminal areas. Firebase sync, KPI analytics, monthly comparison reports, Excel export.
+068 | OT Bill Management System | otbill.vercel.app
+069 | Problem: Overtime billing was manual Excel — complex, time-consuming and error-prone every cycle.
+070 | Solution: Any staff member adds profile once and generates final OT bill instantly. Employee database, auto hourly rate calculation, date-wise OT entry, A4 print output.
+071 | LINUX & TECHNICAL PROJECTS — RHCSA ALIGNED
+072 | Smart Port Billing Infrastructure — RHEL 9 Enterprise Deployment | smart-port-billing-infra.vercel.app
+073 | Production-grade RHEL 9 infrastructure deployment. 7 hardened Bash scripts covering all core RHCSA EX200 objectives.
+074 | LVM storage — 30GB across 3 logical volumes (billing-data, billing-logs, billing-backup) with XFS + UUID fstab
+075 | SELinux enforcing mode — custom fcontext rules, port labeling (port 2222, 3000), booleans, restorecon
+076 | firewalld — dedicated portbilling zone, rich rules, CIDR restrictions, rate limiting, REJECT target
+077 | SSH hardening — port 2222, key-only auth, AllowGroups, MaxAuthTries, FIPS-compatible ciphers (CIS/NIST)
+078 | Podman rootless container deployment — systemd unit, TLS 1.3, Nginx reverse proxy, health checks
+079 | POSIX ACLs with default inheritance + systemd backup timer (daily 02:00, 30-day retention)
+080 | Log monitoring — rsyslog routing, logrotate 90-day retention, journalctl alerting service
+081 | Bash Automation Toolkit — RHEL 9 Sysadmin Scripts | bash-automation-toolkit.vercel.app
+082 | 5 production-grade Bash scripts with strict error handling (set -euo pipefail + ERR trap), structured logging and automated recovery
+083 | user_setup.sh — Linux user provisioning with primary group, password policy, validated sudoers file
+084 | backup.sh — /home and /etc tar.gz archives with integrity verification and 7-day auto-pruning
+085 | disk_monitor.sh — partition usage scanning with WARN (80%) and CRITICAL (95%) exit codes
+086 | service_health.sh — sshd/nginx/firewalld watchdog with auto-restart and diagnostic logging
+087 | system_report.sh — full system snapshot: CPU, memory, disk, network, failed logins, journal errors
+088 | All 5 scripts ShellCheck verified — zero warnings — idempotent execution — cron-ready
+089 | Linux/DevOps Command Reference | devops-command-summary.vercel.app
+090 | 1,311 command blocks, 84 sections — Linux, Docker, Kubernetes, Terraform, AWS, Azure, Security. Built during RHCSA preparation as personal study and interview reference.
+091 | TECHNICAL DEVELOPMENT
+092 | Linux Administration — RHCSA EX200 Preparation | Self-Directed Jan 2025 – Present
+093 | RHCSA EX200 — RHEL 9 structured 60-day program (exam scheduled 2026)
+094 | Completed: user/group management, file permissions, ACLs, process management, SSH, basic storage/networking
+095 | In progress: SELinux, LVM, firewalld, systemd services, NFS, Podman containers, Bash scripting
+096 | Portfolio: 2 live infrastructure projects demonstrating RHCSA skills in production context
+097 | AI-assisted development — Claude (prompt engineering), requirement definition, testing and Vercel deployment
+098 | Arabic Language — Saudi Workplace Readiness | Self-Directed 2025 – Present
+099 | MSA and Saudi spoken Arabic — maritime and port operations terminology focus
+100 | Goal: conversational level for Saudi port workplace communication
+101 | EDUCATION
+102 | Higher Secondary Certificate — Business Studies | Khulna Public College 2009 – 2011
+103 | Secondary School Certificate — Business Studies | Mongla Bandar Secondary School 1999 – 2009
+104 | LANGUAGES
+105 | Bengali — Native
+106 | English — Professional Working
+107 | Arabic — Elementary (Learning)
+108 | Portfolio: sasumel.netlify.app  |  GitHub: github.com/samiulAsumel  |  Available for Saudi Arabia — Q2 2027
 ```
 
 ---
@@ -444,7 +470,7 @@ When the user provides an updated CV, go through this checklist:
 - [ ] Update the typewriter `lines[]` array in `js/main.js` if title or target changed
 - [ ] Update `data-to` counter values in `index.html` if years/apps count changed
 - [ ] Update `<meta name="description">`, `og:description`, `og:title` if headline changed
-- [ ] Update `og:url` and `canonical` if domain changes from `https://samiul.dev`
+- [ ] Update `og:url` and `canonical` if domain changes from `https://sasumel.netlify.app`
 - [ ] Update JSON-LD `jobTitle`, `sameAs` if role or links changed
 - [ ] Update language bar `style="width:N%"` and `aria-valuenow` if proficiency changed
 - [ ] Update the CV snapshot in this README to the new version
