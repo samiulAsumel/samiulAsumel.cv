@@ -1,0 +1,26 @@
+{
+  "name": "Samiul Alam Sumel — Portfolio",
+  "short_name": "SAS CV",
+  "description": "Port Operations Specialist & Linux Systems Engineer targeting Saudi Arabia Q2 2027",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08080f",
+  "theme_color": "#d4a843",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "categories": ["portfolio", "resume"],
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "maskable"
+    }
+  ]
+}

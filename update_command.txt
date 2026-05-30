@@ -1,3 +1,0 @@
-How to trigger an update: 
-Just say "update my portfolio" and provide the updated DOCX.
-Claude reads the README first, knows the full context, extracts the new DOCX, diffs the two, and updates only what changed.
