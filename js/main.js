@@ -1,32 +1,43 @@
 /* ============================================================
-   Samiul Alam Sumel — Portfolio JS
+   Samiul Alam Sumel — Portfolio JS v3.1
    ============================================================ */
 (function () {
   'use strict';
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ----------------------------------------------------------
      CANVAS PARTICLE SYSTEM
   ---------------------------------------------------------- */
   const canvas = document.getElementById('hcv');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [];
+  const ctx = canvas && canvas.getContext ? canvas.getContext('2d') : null;
+  let W = 0;
+  let H = 0;
+  let particles = [];
 
   function resizeCanvas() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = canvas.parentElement.offsetHeight;
+    if (!canvas || !ctx) return;
+    const parent = canvas.parentElement;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = parent ? parent.offsetHeight : window.innerHeight;
+    canvas.width = Math.max(1, Math.floor(W * dpr));
+    canvas.height = Math.max(1, Math.floor(H * dpr));
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
   class Particle {
     constructor() { this.reset(); }
     reset() {
-      this.x  = Math.random() * W;
-      this.y  = Math.random() * H;
-      this.r  = Math.random() * 1.4 + 0.3;
-      this.vx = (Math.random() - 0.5) * 0.28;
-      this.vy = (Math.random() - 0.5) * 0.28;
-      this.a  = Math.random() * 0.45 + 0.08;
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
+      this.r = Math.random() * 1.5 + 0.25;
+      this.vx = (Math.random() - 0.5) * 0.22;
+      this.vy = (Math.random() - 0.5) * 0.22;
+      this.a = Math.random() * 0.40 + 0.06;
     }
     tick() {
       this.x += this.vx;
@@ -42,7 +53,8 @@
   }
 
   function initParticles() {
-    particles = Array.from({ length: 110 }, () => new Particle());
+    const count = W < 640 ? 55 : 110;
+    particles = Array.from({ length: count }, () => new Particle());
   }
 
   function drawConnections() {
@@ -50,12 +62,12 @@
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
-        const d  = Math.sqrt(dx * dx + dy * dy);
-        if (d < 95) {
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 100) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(212,168,67,${0.07 * (1 - d / 95)})`;
+          ctx.strokeStyle = `rgba(212,168,67,${0.055 * (1 - d / 100)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -64,13 +76,14 @@
   }
 
   function animateParticles() {
+    if (!ctx) return;
     ctx.clearRect(0, 0, W, H);
     particles.forEach(p => { p.tick(); p.draw(); });
     drawConnections();
-    requestAnimationFrame(animateParticles);
+    window.requestAnimationFrame(animateParticles);
   }
 
-  if (!prefersReducedMotion) {
+  if (canvas && ctx && !prefersReducedMotion) {
     resizeCanvas();
     initParticles();
     animateParticles();
@@ -78,116 +91,189 @@
   }
 
   /* ----------------------------------------------------------
-     NAVBAR SCROLL EFFECT
+     SCROLL PROGRESS BAR + NAV STATE
   ---------------------------------------------------------- */
+  const progressBar = document.getElementById('spb');
   const navbar = document.getElementById('nb');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('sc', window.scrollY > 50);
-  }, { passive: true });
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+
+  function updateProgress() {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    if (progressBar && total > 0) {
+      progressBar.style.width = ((window.scrollY / total) * 100).toFixed(2) + '%';
+    }
+  }
+
+  function getActiveSection() {
+    const y = window.scrollY + 130;
+    let active = null;
+    for (const section of sections) {
+      if (section.offsetTop <= y) active = section.id;
+    }
+    return active;
+  }
+
+  function updateNav() {
+    if (navbar) navbar.classList.toggle('sc', window.scrollY > 50);
+    updateProgress();
+    const active = getActiveSection();
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href').slice(1) === active);
+    });
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
 
   /* ----------------------------------------------------------
      MOBILE MENU
   ---------------------------------------------------------- */
   const hamburger = document.getElementById('hbg');
   const mobileMenu = document.getElementById('mob');
+  const mobileClose = document.getElementById('mobx');
 
-  function openMobileMenu() {
-    hamburger.classList.add('op');
-    mobileMenu.classList.add('op');
-    hamburger.setAttribute('aria-expanded', 'true');
-    hamburger.setAttribute('aria-label', 'Close navigation menu');
-    document.body.style.overflow = 'hidden';
+  function setMobileMenu(open) {
+    if (!hamburger || !mobileMenu) return;
+    hamburger.classList.toggle('op', open);
+    mobileMenu.classList.toggle('op', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    document.body.style.overflow = open ? 'hidden' : '';
   }
 
-  function closeMobileMenu() {
-    hamburger.classList.remove('op');
-    mobileMenu.classList.remove('op');
-    hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.setAttribute('aria-label', 'Open navigation menu');
-    document.body.style.overflow = '';
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => setMobileMenu(!hamburger.classList.contains('op')));
+    if (mobileClose) mobileClose.addEventListener('click', () => setMobileMenu(false));
+    document.querySelectorAll('.mob a').forEach(link => link.addEventListener('click', () => setMobileMenu(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mobileMenu.classList.contains('op')) setMobileMenu(false);
+    });
   }
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.contains('op') ? closeMobileMenu() : openMobileMenu();
-  });
-
-  document.getElementById('mobx').addEventListener('click', closeMobileMenu);
-
-  document.querySelectorAll('.mob a').forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-  });
 
   /* ----------------------------------------------------------
-     SCROLL ANIMATIONS & PROGRESS BARS
+     SCROLL ANIMATIONS + PROGRESS BARS
   ---------------------------------------------------------- */
-  const animObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('v');
-        entry.target.querySelectorAll('.dc-pf').forEach(bar => {
-          bar.style.width = bar.dataset.w + '%';
-        });
-      }
+  const animated = document.querySelectorAll('.fi, .fl, .fr');
+  const progressBlocks = document.querySelectorAll('.dc');
+
+  function revealElement(el) {
+    el.classList.add('v');
+    el.querySelectorAll('.dc-pf').forEach(bar => {
+      bar.style.width = (bar.dataset.w || '0') + '%';
     });
-  }, { threshold: 0.1 });
+  }
 
-  document.querySelectorAll('.fi, .fl, .fr').forEach(el => animObserver.observe(el));
-  document.querySelectorAll('.dc').forEach(el => animObserver.observe(el));
+  if ('IntersectionObserver' in window) {
+    const animObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) revealElement(entry.target);
+      });
+    }, { threshold: 0.1 });
 
-  setTimeout(() => {
-    document.querySelectorAll('#hero .fi').forEach(el => el.classList.add('v'));
-  }, 100);
+    animated.forEach(el => animObs.observe(el));
+    progressBlocks.forEach(el => animObs.observe(el));
+  } else {
+    animated.forEach(revealElement);
+    progressBlocks.forEach(revealElement);
+  }
+
+  window.setTimeout(() => {
+    document.querySelectorAll('#hero .fi, #hero .fl, #hero .fr').forEach(el => el.classList.add('v'));
+  }, 80);
 
   /* ----------------------------------------------------------
      COUNTER ANIMATION
   ---------------------------------------------------------- */
-  function animateCounter(el, end, suffix = '', duration = 1800) {
-    let startTime = null;
-    function step(timestamp) {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      el.textContent = Math.floor(progress * end) + (progress < 1 ? '' : suffix);
-      if (progress < 1) requestAnimationFrame(step);
+  function animateCounter(el, end, suffix = '', duration = 1900) {
+    if (!el) return;
+    let t0 = null;
+    function step(ts) {
+      if (!t0) t0 = ts;
+      const p = Math.min((ts - t0) / duration, 1);
+      const e = p < 1 ? 1 - Math.pow(1 - p, 3) : 1;
+      el.textContent = Math.floor(e * end) + (p >= 1 ? suffix : '');
+      if (p < 1) window.requestAnimationFrame(step);
     }
-    requestAnimationFrame(step);
+    window.requestAnimationFrame(step);
   }
 
-  const statsObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(document.getElementById('c1'), 12, '+');
-        animateCounter(document.getElementById('c2'), 3, '');
-        animateCounter(document.getElementById('c3'), 10, '+');
-        animateCounter(document.getElementById('c4'), 2027, '');
-        statsObserver.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-
   const statsEl = document.querySelector('.h-stats');
-  if (statsEl) statsObserver.observe(statsEl);
+  if (statsEl && 'IntersectionObserver' in window) {
+    const statsObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(document.getElementById('c1'), 12, '+');
+          animateCounter(document.getElementById('c2'), 3);
+          animateCounter(document.getElementById('c3'), 11, '+');
+          animateCounter(document.getElementById('c4'), 2027);
+          statsObs.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    statsObs.observe(statsEl);
+  }
 
   /* ----------------------------------------------------------
-     PROJECT FILTER TABS
+     PROJECT FILTER CONTROLS
   ---------------------------------------------------------- */
   document.querySelectorAll('.ptab').forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.ptab').forEach(t => t.classList.remove('a'));
-      tab.classList.add('a');
+      document.querySelectorAll('.ptab').forEach(button => {
+        const active = button === tab;
+        button.classList.toggle('a', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
       const filter = tab.dataset.f;
       document.querySelectorAll('.pc').forEach(card => {
-        card.style.display = (filter === 'all' || card.dataset.cat === filter) ? 'flex' : 'none';
+        card.hidden = !(filter === 'all' || card.dataset.cat === filter);
       });
     });
   });
 
   /* ----------------------------------------------------------
+     3D CARD TILT + MOUSE SPOTLIGHT
+  ---------------------------------------------------------- */
+  if (!prefersReducedMotion) {
+    const TILT_SEL = '.sk-card, .pc, .dc, .ec, .tl-card';
+    const TILT_MAX = 8;
+    const LIFT = -6;
+
+    document.querySelectorAll(TILT_SEL).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        el.style.transform = `translateY(${LIFT}px)`;
+        el.style.willChange = 'transform';
+      });
+
+      el.addEventListener('mousemove', event => {
+        const rect = el.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const xPct = (event.clientX - rect.left) / rect.width;
+        const yPct = (event.clientY - rect.top) / rect.height;
+        const rx = (yPct - 0.5) * -TILT_MAX * 2;
+        const ry = (xPct - 0.5) * TILT_MAX * 2;
+
+        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(${LIFT}px)`;
+        el.style.setProperty('--mx', `${(xPct * 100).toFixed(1)}%`);
+        el.style.setProperty('--my', `${(yPct * 100).toFixed(1)}%`);
+      });
+
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform .55s cubic-bezier(.34,1.56,.64,1), box-shadow var(--ease), border-color var(--ease)';
+        el.style.transform = '';
+        el.style.setProperty('--mx', '50%');
+        el.style.setProperty('--my', '50%');
+        window.setTimeout(() => { el.style.transition = ''; el.style.willChange = ''; }, 580);
+      });
+    });
+  }
+
+  /* ----------------------------------------------------------
      SERVICE WORKER
   ---------------------------------------------------------- */
-  if ('serviceWorker' in navigator) {
+  if ('serviceWorker' in navigator && /^(https?:)$/.test(window.location.protocol)) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
     });
   }
-
 })();
