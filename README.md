@@ -40,9 +40,20 @@ sw.js                     Service worker (cache-first, bump CACHE_NAME on
 favicon.svg
 scripts/generate_cvs.py   Regenerates both CV .docx files from the same
                          content facts as the site (see below)
-Samiul_Alam_Sumel_Final.docx                Standard CV (job applications)
-Samiul_Alam_Sumel_Freelance_Remote_CV.docx  Freelance/contract-pitch CV
+Samiul_Alam_Sumel_CV.docx             Standard CV — full-time job applications
+Samiul_Alam_Sumel_Freelance_CV.docx   Freelance/contract-pitch CV
 ```
+
+## Which CV to use for what
+
+- **`Samiul_Alam_Sumel_CV.docx`** — standard reverse-chronological CV. Use
+  for full-time job applications: recruiters, LinkedIn/Indeed, ATS-based
+  application systems. Leads with Experience, parses cleanly in ATS.
+- **`Samiul_Alam_Sumel_Freelance_CV.docx`** — services-first pitch CV. Use
+  for freelance/contract work: Upwork-style platforms, direct client
+  outreach, cold pitches. Leads with "Services I Deliver" and proof, which
+  converts better with clients but is not what ATS keyword-matching expects
+  — don't use this one for formal full-time applications.
 
 ## Regenerating the CVs
 

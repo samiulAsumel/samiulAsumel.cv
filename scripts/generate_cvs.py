@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Samiul_Alam_Sumel_Final.docx and Samiul_Alam_Sumel_Freelance_Remote_CV.docx.
+"""Generate Samiul_Alam_Sumel_CV.docx and Samiul_Alam_Sumel_Freelance_CV.docx.
 
 Content is sourced strictly from the portfolio site (../index.html) -- same
 facts, same honest framing, no sugarcoating, no claims beyond what the
@@ -435,7 +435,7 @@ def build_final_cv():
     add_section_heading(doc, "Languages")
     add_body(doc, "Bengali — Native   |   English — Professional", size=9.8, align=None)
 
-    path = OUT_DIR / "Samiul_Alam_Sumel_Final.docx"
+    path = OUT_DIR / "Samiul_Alam_Sumel_CV.docx"
     doc.save(path)
     print("Saved:", path)
 
@@ -529,7 +529,7 @@ def build_freelance_cv():
                    space_after=2)
     add_skill_line(doc, "Languages", "Bengali — Native   |   English — Professional", space_after=2)
 
-    path = OUT_DIR / "Samiul_Alam_Sumel_Freelance_Remote_CV.docx"
+    path = OUT_DIR / "Samiul_Alam_Sumel_Freelance_CV.docx"
     doc.save(path)
     print("Saved:", path)
 
