@@ -58,6 +58,11 @@ button{cursor:pointer;font-family:inherit}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 
+/* Justified body copy — long-form paragraphs only, never nav/buttons/tags/lists */
+.h-desc,.ab-text p,.svc-intro,.svc-desc,.pc-pb,.pc-ds,.dc-note,.ct-text p{
+  text-align:justify;text-align-last:left;hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;
+}
+
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--gold-d),var(--gold));border-radius:2px}
@@ -417,10 +422,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
    PROJECTS
 ═══════════════════════════════════════════════════════════════ */
 #projects{background:var(--bg)}
-.ptabs{display:flex;gap:8px;margin-bottom:48px;flex-wrap:wrap}
-.ptab{padding:9px 24px;border-radius:24px;font-size:.8rem;font-weight:700;cursor:pointer;border:1px solid var(--bdr-s);background:transparent;color:var(--tx2);transition:all var(--ease);font-family:inherit;letter-spacing:.01em}
-.ptab:hover{border-color:var(--bdr);color:var(--tx)}
-.ptab.a{background:var(--gold-10);border-color:var(--bdr-h);color:var(--gold)}
 
 .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(335px,1fr));gap:20px}
 
@@ -436,10 +437,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   display:flex;flex-direction:column;
   position:relative;overflow:hidden;
 }
-/* Category top accent bar — revealed on hover */
-.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity var(--ease)}
-.pc[data-cat="web"]::before{background:linear-gradient(90deg,transparent,var(--gold),var(--gold-l),transparent)}
-.pc[data-cat="linux"]::before{background:linear-gradient(90deg,transparent,var(--gr),rgba(74,222,128,.55),transparent)}
+/* Top accent bar — revealed on hover */
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:opacity var(--ease);background:linear-gradient(90deg,transparent,var(--gold),var(--gold-l),transparent)}
 .pc:hover{border-color:var(--bdr);box-shadow:var(--glow)}
 .pc:hover::before{opacity:1}
 

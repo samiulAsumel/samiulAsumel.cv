@@ -215,23 +215,6 @@
   }
 
   /* ----------------------------------------------------------
-     PROJECT FILTER CONTROLS
-  ---------------------------------------------------------- */
-  document.querySelectorAll('.ptab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.ptab').forEach(button => {
-        const active = button === tab;
-        button.classList.toggle('a', active);
-        button.setAttribute('aria-pressed', String(active));
-      });
-      const filter = tab.dataset.f;
-      document.querySelectorAll('.pc').forEach(card => {
-        card.hidden = !(filter === 'all' || card.dataset.cat === filter);
-      });
-    });
-  });
-
-  /* ----------------------------------------------------------
      3D CARD TILT + MOUSE SPOTLIGHT
   ---------------------------------------------------------- */
   if (!prefersReducedMotion) {
