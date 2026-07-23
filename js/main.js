@@ -205,8 +205,8 @@
         if (entry.isIntersecting) {
           animateCounter(document.getElementById('c1'), 12, '+');
           animateCounter(document.getElementById('c2'), 3);
-          animateCounter(document.getElementById('c3'), 11, '+');
-          animateCounter(document.getElementById('c4'), 2026);
+          animateCounter(document.getElementById('c3'), 4);
+          animateCounter(document.getElementById('c4'), 81);
           statsObs.disconnect();
         }
       });
